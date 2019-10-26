@@ -2,8 +2,410 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/st3_baseball/Numberbaseball.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/Numberbaseball.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/dist/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/compileStyle.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/compileTemplate.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/parse.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/stylePlugins/scoped.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/stylePlugins/trim.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/styleProcessors/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/templateCompilerModules/assetUrl.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/templateCompilerModules/srcset.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/templateCompilerModules/utils.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/dist/types.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/compileStyle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/compileTemplate.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/parse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/stylePlugins/scoped.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/stylePlugins/trim.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/styleProcessors/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/templateCompilerModules/assetUrl.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/templateCompilerModules/srcset.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/templateCompilerModules/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/lib/types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/@vue/component-compiler-utils/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/chalk/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/chalk/types/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/commander/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/commander/typings/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/postcss-selector-parser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/postcss-selector-parser/postcss-selector-parser.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/postcss/lib/postcss.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/postcss/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/source-map/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/terser/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/terser/tools/terser.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/codegen/customBlocks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/codegen/hotReload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/codegen/styleInjection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/codegen/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/loaders/pitcher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/loaders/stylePostLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/loaders/templateLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/plugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/runtime/componentNormalizer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/lib/select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/vue-loader/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/config/config-yargs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/utils/convert-argv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/utils/errorHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/utils/prepareOptions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/utils/prompt-command.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/bin/utils/validate-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack-cli/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/bin/webpack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/buildin/amd-define.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/buildin/amd-options.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/buildin/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/buildin/harmony-module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/buildin/module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/buildin/system.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/WebpackOptions.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/BannerPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/DllPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/DllReferencePlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/HashedModuleIdsPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/IgnorePlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/LoaderOptionsPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/ProgressPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/SourceMapDevToolPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/WatchIgnorePlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/debug/ProfilingPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/optimize/AggressiveSplittingPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/optimize/LimitChunkCountPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/optimize/MinChunkSizePlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/optimize/OccurrenceOrderChunkIdsPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/declarations/plugins/optimize/OccurrenceOrderModuleIdsPlugin.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/dev-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/emitter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/log-apply-result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/only-dev-server.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/poll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/hot/signal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/APIPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/AbstractMethodError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/AmdMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/AsyncDependenciesBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/AsyncDependencyToInitialChunkError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/AutomaticPrefetchPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/BannerPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/BasicEvaluatedExpression.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/CachePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/CaseSensitiveModulesWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Chunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ChunkGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ChunkRenderError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ChunkTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/CommentCompilationWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/CommonJsStuffPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/CompatibilityPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Compilation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Compiler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ConcurrentCompilationError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ConstPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ContextExclusionPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ContextModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ContextModuleFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ContextReplacementPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DefinePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DelegatedModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DelegatedModuleFactoryPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DelegatedPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DependenciesBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DependenciesBlockVariable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Dependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DllEntryPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DllModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DllModuleFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DllPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DllReferencePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/DynamicEntryPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EntryModuleNotFoundError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EntryOptionPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Entrypoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EnvironmentPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ErrorHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EvalDevToolModulePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EvalDevToolModuleTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EvalSourceMapDevToolModuleTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/EvalSourceMapDevToolPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ExportPropertyMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ExtendedAPIPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ExternalModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ExternalModuleFactoryPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ExternalsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/FlagDependencyExportsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/FlagDependencyUsagePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/FlagInitialModulesAsUsedPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/FunctionModulePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/FunctionModuleTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Generator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/GraphHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/HarmonyLinkingError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/HashedModuleIdsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/HotModuleReplacement.runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/HotModuleReplacementPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/HotUpdateChunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/HotUpdateChunkTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/IgnorePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/JavascriptGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/JavascriptModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/JsonGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/JsonModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/JsonParser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/LibManifestPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/LibraryTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/LoaderOptionsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/LoaderTargetPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MainTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MemoryOutputFileSystem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleBuildError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleDependencyError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleDependencyWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleFilenameHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleNotFoundError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleParseError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleReason.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ModuleWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MultiCompiler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MultiEntryPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MultiModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MultiModuleFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MultiStats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/MultiWatching.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NamedChunksPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NamedModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NoEmitOnErrorsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NoModeWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NodeStuffPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NormalModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NormalModuleFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NormalModuleReplacementPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/NullFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/OptionsApply.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/OptionsDefaulter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ParserHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/PrefetchPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ProgressPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ProvidePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RawModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RecordIdsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RemovedPluginError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RequestShortener.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RequireJsStuffPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/ResolverFactory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RuleSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/RuntimeTemplate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/SetVarMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/SingleEntryPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/SizeFormatHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/SourceMapDevToolModuleOptionsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/SourceMapDevToolPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Stats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/SystemMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Template.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/TemplatedPathPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/UmdMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/UnsupportedFeatureWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/UseStrictPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WarnCaseSensitiveModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WarnNoModeSetPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WatchIgnorePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/Watching.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WebpackError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WebpackOptionsApply.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WebpackOptionsDefaulter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/WebpackOptionsValidationError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/buildChunkGraph.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/compareLocations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/debug/ProfilingPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDDefineDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDDefineDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDRequireArrayDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDRequireContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDRequireDependenciesBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDRequireDependenciesBlockParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDRequireDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/AMDRequireItemDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/CommonJsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/CommonJsRequireContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/CommonJsRequireDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/CommonJsRequireDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ConstDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ContextDependencyHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ContextDependencyTemplateAsId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ContextDependencyTemplateAsRequireCall.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ContextElementDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/CriticalDependencyWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/DelegatedExportsDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/DelegatedSourceDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/DependencyReference.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/DllEntryDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyAcceptDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyAcceptImportDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyCompatibilityDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyDetectionParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyExportDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyExportExpressionDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyExportHeaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyExportImportedSpecifierDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyExportSpecifierDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyImportDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyImportDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyImportSideEffectDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyImportSpecifierDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyInitDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/HarmonyTopLevelThisParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportDependenciesBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportEagerDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ImportWeakDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/JsonExportsDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/LoaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/LoaderPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/LocalModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/LocalModuleDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/LocalModulesHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ModuleDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ModuleDependencyTemplateAsId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ModuleDependencyTemplateAsRequireId.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ModuleHotAcceptDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/ModuleHotDeclineDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/MultiEntryDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/NullDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/PrefetchDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireContextDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireContextPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireEnsureDependenciesBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireEnsureDependenciesBlockParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireEnsureDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireEnsureItemDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireEnsurePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireHeaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireIncludeDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireIncludeDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireIncludePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireResolveContextDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireResolveDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireResolveDependencyParserPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/RequireResolveHeaderDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/SingleEntryDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/SystemPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/UnsupportedDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/WebAssemblyExportImportedDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/WebAssemblyImportDependency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/WebpackMissingModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/dependencies/getFunctionExpression.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/formatLocation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/logging/Logger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/logging/createConsoleLogger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/logging/runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/logging/truncateArgs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeChunkTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeEnvironmentPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeHotUpdateChunkTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeMainTemplate.runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeMainTemplateAsync.runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeOutputFileSystem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeSourcePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeTargetPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/NodeWatchFileSystem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/ReadFileCompileWasmTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/node/nodeConsole.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/AggressiveMergingPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/AggressiveSplittingPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/ChunkModuleIdRangePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/ConcatenatedModule.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/EnsureChunkConditionsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/FlagIncludedChunksPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/LimitChunkCountPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/MergeDuplicateChunksPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/MinChunkSizePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/MinMaxSizeWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/ModuleConcatenationPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/NaturalChunkOrderPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/OccurrenceChunkOrderPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/OccurrenceModuleOrderPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/OccurrenceOrderPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/RemoveEmptyChunksPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/RemoveParentModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/RuntimeChunkPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/SideEffectsFlagPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/optimize/SplitChunksPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/performance/AssetsOverSizeLimitWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/performance/EntrypointsOverSizeLimitWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/performance/NoAsyncChunksWarning.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/performance/SizeLimitsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/LazyBucketSortedSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/Queue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/Semaphore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/SetHelpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/SortableSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/StackedSetMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/TrackingSet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/cachedMerge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/cleverMerge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/createHash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/deterministicGrouping.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/identifier.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/util/objectToMap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/validateSchema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/UnsupportedWebAssemblyFeatureError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WasmFinalizeExportsPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WasmMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WebAssemblyGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WebAssemblyInInitialChunkError.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WebAssemblyJavascriptGenerator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WebAssemblyModulesPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WebAssemblyParser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/wasm/WebAssemblyUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/FetchCompileWasmTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/JsonpChunkTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/JsonpExportMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/JsonpHotUpdateChunkTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/JsonpMainTemplate.runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/JsonpMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/JsonpTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/web/WebEnvironmentPlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webpack.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webpack.web.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webworker/WebWorkerChunkTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webworker/WebWorkerHotUpdateChunkTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webworker/WebWorkerMainTemplate.runtime.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webworker/WebWorkerMainTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/lib/webworker/WebWorkerTemplatePlugin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/schemas/ajv.absolutePath.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/node_modules/webpack/web_modules/node-libs-browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st3_baseball/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Last_and_First/WordRelay.html" beforeDir="false" afterPath="$PROJECT_DIR$/Last_and_First/WordRelay.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +416,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
       </list>
     </option>
@@ -22,8 +425,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Sjq9Te2ByScg5BxMHW2xNpaDKX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -32,6 +438,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -51,7 +458,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.WordRelay.html">
+  <component name="RunManager" selected="JavaScript Debug.Numberbaseball.html">
+    <configuration name="Numberbaseball.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Numberbaseball.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="WordRelay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/Last_and_First/WordRelay.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -63,6 +476,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Numberbaseball.html" />
+        <item itemvalue="JavaScript Debug.Numberbaseball.vue" />
         <item itemvalue="JavaScript Debug.WordRelay.html" />
         <item itemvalue="JavaScript Debug.gugudan.html" />
         <item itemvalue="JavaScript Debug.like-button.html" />
@@ -86,8 +501,16 @@
       <workItem from="1572087201820" duration="28000" />
       <workItem from="1572087232053" duration="7311000" />
       <workItem from="1572107145830" duration="904000" />
-      <workItem from="1572109057156" duration="2259000" />
+      <workItem from="1572109057156" duration="8725000" />
     </task>
+    <task id="LOCAL-00001" summary="vue-globalcomponent, template">
+      <created>1572111514697</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572111514697</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,5 +528,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="vue-globalcomponent, template" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue-globalcomponent, template" />
   </component>
 </project>
