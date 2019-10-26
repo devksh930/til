@@ -8,42 +8,51 @@
 </head>
 <body>
 <div id="root">
-    <div>{{word}}</div>
-    <form v-on:submit="onSubmitForm">
-        <input type="text" ref="answer" v-model="value">
-        <button type="submit">입력!</button>
-
-    </form>
-    <div>{{result}}</div>
+    <word-relay start-Word="김성호"></word-relay>
+    <word-relay start-Word="아이맥"></word-relay>
+    <word-relay start-Word="맥북"></word-relay>
 </div>
-
 <script>
-    const app = new Vue({
-        el: '#root',
-        data:{
-            word:'김성호',
-            result:'',
-            value:'',
+    Vue.component('word-relay', { //global component
+        template: `
+            <div>
+                <div>{{word}}</div>
+                <form v-on:submit="onSubmitForm">
+                    <input type="text" ref="answer" v-model="value">
+                    <button type="submit">입력!</button>
+                </form>
+                <div>{{result}}</div>
+            </div>
+        `,
+        props: ['startWord'],
+        data() {
+            return {
+                word: this.startWord,
+                result: '',
+                value: '',
+            };
         },
-        methods:{
-            onSubmitForm(e){
+        methods: {
+            onSubmitForm(e) {
                 e.preventDefault();
-                if(this.word[this.word.length - 1] === this.value[0]){
+                if (this.word[this.word.length - 1] === this.value[0]) {
                     this.result = '딩동댕';
-                    this.word=this.value;
-                    this.value='';
+                    this.word = this.value;
+                    this.value = '';
                     this.$refs.answer.focus();
-               }else{
+                } else {
                     this.result = '땡';
-                    this.value='';
+                    this.value = '';
                     this.$refs.answer.focus();
-
-
                 }
             },
-        },
+        }
     });
-
+</script>
+<script>
+    const app = new Vue({
+        el:'#root',
+    });
 </script>
 </body>
 </html>
