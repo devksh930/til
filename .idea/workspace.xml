@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +98,7 @@
       <workItem from="1572087201820" duration="28000" />
       <workItem from="1572087232053" duration="7311000" />
       <workItem from="1572107145830" duration="904000" />
-      <workItem from="1572109057156" duration="11420000" />
+      <workItem from="1572109057156" duration="11509000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
