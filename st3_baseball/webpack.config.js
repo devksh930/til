@@ -1,4 +1,4 @@
-const VueloaderPlugin = require('vue-loader/lib/plugin');
+const VueloaderPlugin = require('vue-loader/lib/plugin'); //node moudule
 const path = require('path');
 
 module.exports ={
