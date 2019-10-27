@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="webpack init, v-for">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +107,7 @@
       <workItem from="1572109057156" duration="11619000" />
       <workItem from="1572163482864" duration="967000" />
       <workItem from="1572165461205" duration="4096000" />
-      <workItem from="1572170493243" duration="83000" />
+      <workItem from="1572170493243" duration="1701000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
