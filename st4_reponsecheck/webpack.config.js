@@ -13,7 +13,13 @@ module.exports ={
     module: {
         rules:[{
             test: /\.vue$/,
-            loader: 'vue-loader',
+            use: 'vue-loader',
+        },{
+            test:/\.css$/,
+            use:[
+                'vue-style-loader',
+                'css-loader',
+            ]
         }], // vue 는 js 파일이 아니라서 에러가난다 vue파일을 실행하려면 vue loader가 필요하다.
     },
     plugins: [
@@ -22,5 +28,6 @@ module.exports ={
     output: {
         filename: '[name].js',
         path: path.join(__dirname,'dist'),
+        publicPath:'/dist',
     },
 };

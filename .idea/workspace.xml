@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="webpack init, v-for">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.html" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/st4_reponsecheck/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/webpack.config.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +64,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Numberbaseball.html">
+  <component name="RunManager" selected="JavaScript Debug.ResponseCheck.html">
     <configuration name="Numberbaseball.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="Numberbaseball.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="ResponseCheck.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st4_reponsecheck/ResponseCheck.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="WordRelay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/Last_and_First/WordRelay.html" useBuiltInWebServerPort="true">
@@ -74,16 +80,13 @@
     <configuration name="gugudan.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/gugudan/gugudan.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="like-button.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/gugudan/like-button.html" useBuiltInWebServerPort="true">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.ResponseCheck.html" />
         <item itemvalue="JavaScript Debug.Numberbaseball.html" />
         <item itemvalue="JavaScript Debug.Numberbaseball.vue" />
         <item itemvalue="JavaScript Debug.WordRelay.html" />
         <item itemvalue="JavaScript Debug.gugudan.html" />
-        <item itemvalue="JavaScript Debug.like-button.html" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +109,8 @@
       <workItem from="1572107145830" duration="904000" />
       <workItem from="1572109057156" duration="11619000" />
       <workItem from="1572163482864" duration="967000" />
-      <workItem from="1572165461205" duration="1249000" />
+      <workItem from="1572165461205" duration="4096000" />
+      <workItem from="1572170493243" duration="83000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
