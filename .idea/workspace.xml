@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="webpack init, v-for">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st4_reponsecheck/ResponseCheck.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +109,7 @@
       <workItem from="1572170493243" duration="2029000" />
       <workItem from="1572235046579" duration="240000" />
       <workItem from="1572236085249" duration="1565000" />
-      <workItem from="1572357907094" duration="639000" />
+      <workItem from="1572357907094" duration="1161000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
