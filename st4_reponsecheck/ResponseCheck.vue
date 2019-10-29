@@ -1,8 +1,8 @@
 <template>
     <div>
     <div id="screen" :class="state" @click="onClickScreen">{{message}}</div> <!-- v bind:class alias :class -->
-    <div>
-        <div>평균 시간 : {{result.reduce((a, c)=>a+c,0)/result.length || 0}}ms</div>
+    <div v-show="result.length">
+        <div>평균 시간 : {{average}}ms</div>
         <button @click="onReset">리셋 버튼</button>
     </div>
     </div>
@@ -19,6 +19,11 @@
             state: 'waiting',
             message: '클릭해서 시작하세요',
          }
+        },
+        computed: {
+            average(){
+                return this.result.reduce((a, c)=>a+c,0)/this.result.length || 0 ; //일반데이터를 가공해서 쓸떄 캐싱이 된다. 만약에 이값이 message가 바뀌면 result부분이 재실행된다 복잡해지고 연산이 많아지면 화면뛰우는데 오래걸려서 computed를 사용한다.
+            }
         },
         methods: {
             onReset(){
