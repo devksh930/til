@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="webpack init, v-for">
+      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/RockScissorsPaper.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/RockScissorsPaper.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +35,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/st4_reponsecheck" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/st5_Rock_paper_scissors" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,11 +46,12 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/st4_reponsecheck" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gugudan" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/st5_Rock_paper_scissors" />
+      <recent name="$PROJECT_DIR$/st4_reponsecheck" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -109,7 +115,9 @@
       <workItem from="1572170493243" duration="2029000" />
       <workItem from="1572235046579" duration="240000" />
       <workItem from="1572236085249" duration="1565000" />
-      <workItem from="1572357907094" duration="1161000" />
+      <workItem from="1572357907094" duration="1248000" />
+      <workItem from="1572847888396" duration="25000" />
+      <workItem from="1572847935995" duration="2929000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
