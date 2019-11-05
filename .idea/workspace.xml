@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="webpack init, v-for">
-      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/RockScissorsPaper.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/RockScissorsPaper.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/webpack.config.js" afterDir="false" />
+    <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/LottoBall.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/LottoGenerator.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/LottoGenerator.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st6_Lotto/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st5_Rock_paper_scissors/RockScissorsPaper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st5_Rock_paper_scissors/RockScissorsPaper.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,10 +24,16 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="devksh930 &lt;devksh930@icloud.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1Sjq9Te2ByScg5BxMHW2xNpaDKX" />
@@ -46,12 +55,13 @@
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gugudan" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/st5_Rock_paper_scissors" />
+      <recent name="$PROJECT_DIR$/st6_Lotto" />
       <recent name="$PROJECT_DIR$/st4_reponsecheck" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gugudan" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -117,7 +127,8 @@
       <workItem from="1572236085249" duration="1565000" />
       <workItem from="1572357907094" duration="1248000" />
       <workItem from="1572847888396" duration="25000" />
-      <workItem from="1572847935995" duration="2929000" />
+      <workItem from="1572847935995" duration="6041000" />
+      <workItem from="1572960919097" duration="5827000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
@@ -140,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572118160857</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="vue life-cycle">
+      <created>1572851089526</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572851089526</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +181,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="vue-globalcomponent, template" />
     <MESSAGE value="webpack init, v-for" />
-    <option name="LAST_COMMIT_MESSAGE" value="webpack init, v-for" />
+    <MESSAGE value="vue life-cycle" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue life-cycle" />
   </component>
 </project>
