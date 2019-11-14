@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/TableComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/TdComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/Tic_Tac_Toe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/Tic_Tac_Toe.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/TrComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tic_Tac_Toe/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TableComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TableComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TdComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TdComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/Tic_Tac_Toe.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/Tic_Tac_Toe.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TrComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TrComponent.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +42,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Tic_Tac_Toe" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -136,7 +133,11 @@
       <workItem from="1572847935995" duration="6041000" />
       <workItem from="1572960919097" duration="6126000" />
       <workItem from="1572968515809" duration="297000" />
-      <workItem from="1573398235384" duration="2107000" />
+      <workItem from="1573398235384" duration="2300000" />
+      <workItem from="1573448581434" duration="488000" />
+      <workItem from="1573653030850" duration="159000" />
+      <workItem from="1573722889583" duration="45000" />
+      <workItem from="1573747767900" duration="3745000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>

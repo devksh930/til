@@ -1,5 +1,5 @@
 <template>
-    <td></td>
+    <td @click="onClickTd">{{cellData}}</td>
 </template>
 
 <script>
@@ -9,6 +9,14 @@
             rowIndex: Number,
             cellIndex: Number,
         },
+        methods:{
+            onClickTd(){
+                console.log(this.$root.$data);
+                console.log(this.$parent.$data);
+                this.$root.$data.turn = this.$root.$data.turn === 'O' ?
+                    'X' : 'O' ;
+            }
+        }
     };
 </script>
 

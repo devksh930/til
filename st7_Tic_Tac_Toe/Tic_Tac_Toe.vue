@@ -1,5 +1,8 @@
 <template>
-<table-component :table-data="tableData"></table-component>
+    <div>
+    <table-component :table-data="tableData" />
+        <div>{{turn}}님의 턴 입니다.</div>
+    </div>
 </template>
 
 
@@ -16,19 +19,22 @@
                 ['','',''],
                 ['','',''],
                 ['','',''],
-            ],
+            ], turn: 'O',
             };
-
-        },
-        computed: {
-
         },
         methods: {
-
         },
     };
 </script>
 
-<style scoped>
-
+<style>
+table{
+    border-collapse: collapse;
+}
+    td{
+        border: 1px solid black;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+    }
 </style>
