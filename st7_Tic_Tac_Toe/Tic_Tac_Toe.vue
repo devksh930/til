@@ -23,6 +23,11 @@
             };
         },
         methods: {
+            onChangeDate(){
+                //this.tableData[1][0]= 'X'; 작동하지 않
+               // Vue.set(this.tableDat음a[1], 0, 'X');     import Vue from 'vue';임포트 해서 사용하거
+                this.$set(this.tableData[1],0,'X'); //vue set과 동일
+            }
         },
     };
 </script>

@@ -11,10 +11,10 @@
         },
         methods:{
             onClickTd(){
-                console.log(this.$root.$data);
-                console.log(this.$parent.$data);
-                this.$root.$data.turn = this.$root.$data.turn === 'O' ?
-                    'X' : 'O' ;
+                const rootData = this.$root.$data;
+                console.log(rootData);
+                this.$set(rootData.tableData[this.rowIndex], this.cellIndex, rootData.turn);
+                this.$root.$data.turn = this.$root.$data.turn === 'O' ? 'X' : 'O' ;
             }
         }
     };

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TableComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TableComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TdComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TdComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/Tic_Tac_Toe.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/Tic_Tac_Toe.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TrComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TrComponent.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +134,7 @@
       <workItem from="1573448581434" duration="488000" />
       <workItem from="1573653030850" duration="159000" />
       <workItem from="1573722889583" duration="45000" />
-      <workItem from="1573747767900" duration="3745000" />
+      <workItem from="1573747767900" duration="6162000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
