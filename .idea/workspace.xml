@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/EventBus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/TableComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/TdComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/Tic_Tac_Toe.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/Tic_Tac_Toe.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/TrComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TdComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/TdComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st7_Tic_Tac_Toe/Tic_Tac_Toe.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st7_Tic_Tac_Toe/Tic_Tac_Toe.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,7 +49,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tic_Tac_Toe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/st7_Tic_Tac_Toe(EvenvtBus)" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,16 +60,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/gugudan" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/st7_Tic_Tac_Toe(EvenvtBus)" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Tic_Tac_Toe" />
       <recent name="$PROJECT_DIR$/TIC_TAC_TO" />
       <recent name="$PROJECT_DIR$/st5_Rock_paper_scissors" />
-      <recent name="$PROJECT_DIR$/st6_Lotto" />
-      <recent name="$PROJECT_DIR$/st4_reponsecheck" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/gugudan" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -134,7 +142,10 @@
       <workItem from="1573448581434" duration="488000" />
       <workItem from="1573653030850" duration="159000" />
       <workItem from="1573722889583" duration="45000" />
-      <workItem from="1573747767900" duration="7355000" />
+      <workItem from="1573747767900" duration="7527000" />
+      <workItem from="1573829494849" duration="328000" />
+      <workItem from="1573834867156" duration="623000" />
+      <workItem from="1573835585087" duration="2579000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
