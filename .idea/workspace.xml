@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TableComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TdComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TrComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/st8_Tic_Tac_Toe(EvenvtBus)/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TableComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TableComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TdComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TdComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.html" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/store.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +38,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -74,18 +71,6 @@
       <recent name="$PROJECT_DIR$/TIC_TAC_TO" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="JavaScript Debug.ResponseCheck.html">
     <configuration name="Numberbaseball.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -111,6 +96,18 @@
         <item itemvalue="JavaScript Debug.gugudan.html" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="StructureViewFactory">
     <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
@@ -151,7 +148,11 @@
       <workItem from="1573983158512" duration="124000" />
       <workItem from="1573983300095" duration="8000" />
       <workItem from="1574001693177" duration="2384000" />
-      <workItem from="1574004244536" duration="2186000" />
+      <workItem from="1574004244536" duration="2405000" />
+      <workItem from="1575025443998" duration="22000" />
+      <workItem from="1575025499656" duration="30000" />
+      <workItem from="1575025546317" duration="5782000" />
+      <workItem from="1577019891526" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
@@ -206,5 +207,11 @@
     <MESSAGE value="webpack init, v-for" />
     <MESSAGE value="vue life-cycle" />
     <option name="LAST_COMMIT_MESSAGE" value="vue life-cycle" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="379" y="175" key="SettingsEditor" timestamp="1575025529398">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="379" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1575025529398" />
   </component>
 </project>
