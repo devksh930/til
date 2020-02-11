@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/MineForm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/TableComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TableComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TableComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TdComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/TdComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.html" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/Tic_Tac_Toe.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/st9_Tic_Tac_Toe(Vuex)/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +52,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/st8_Tic_Tac_Toe(Vuex)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/st10_MineSweeper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -59,16 +63,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/gugudan" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/st10_MineSweeper" />
       <recent name="$PROJECT_DIR$/st8_Tic_Tac_Toe(Vuex)" />
       <recent name="$PROJECT_DIR$/st7_Tic_Tac_Toe(EvenvtBus)" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Tic_Tac_Toe" />
-      <recent name="$PROJECT_DIR$/TIC_TAC_TO" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/gugudan" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.ResponseCheck.html">
@@ -153,6 +157,7 @@
       <workItem from="1575025499656" duration="30000" />
       <workItem from="1575025546317" duration="5782000" />
       <workItem from="1577019891526" duration="23000" />
+      <workItem from="1581430538171" duration="2161000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
@@ -209,9 +214,41 @@
     <option name="LAST_COMMIT_MESSAGE" value="vue life-cycle" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="189" key="#Configure_Path_Variables" timestamp="1581431363478">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="189" key="#Configure_Path_Variables/0.0.1680.1050@0.0.1680.1050" timestamp="1581431363478" />
+    <state x="520" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581432079196">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="520" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1581432079196" />
+    <state x="351" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581431400358">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="351" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581431400358" />
     <state x="379" y="175" key="SettingsEditor" timestamp="1575025529398">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="379" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1575025529398" />
+    <state x="503" y="271" width="674" height="508" key="find.popup" timestamp="1581431508132">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="503" y="271" width="674" height="508" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581431508132" />
+    <state x="505" y="233" key="search.everywhere.popup" timestamp="1581431511052">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581431511052" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
