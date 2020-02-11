@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/MineForm.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/TableComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/st10_MineSweeper/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st10_MineSweeper/TableComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st10_MineSweeper/TableComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st10_MineSweeper/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/st10_MineSweeper/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +151,7 @@
       <workItem from="1575025499656" duration="30000" />
       <workItem from="1575025546317" duration="5782000" />
       <workItem from="1577019891526" duration="23000" />
-      <workItem from="1581430538171" duration="2161000" />
+      <workItem from="1581430538171" duration="3322000" />
     </task>
     <task id="LOCAL-00001" summary="vue-globalcomponent, template">
       <created>1572111514697</created>
@@ -226,9 +220,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="351" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581431400358" />
-    <state x="379" y="175" key="SettingsEditor" timestamp="1575025529398">
-      <screen x="0" y="23" width="1680" height="1027" />
+    <state x="80" y="122" key="SettingsEditor" timestamp="1581434015024">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state x="80" y="122" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1581434015024" />
     <state x="379" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1575025529398" />
     <state x="503" y="271" width="674" height="508" key="find.popup" timestamp="1581431508132">
       <screen x="0" y="0" width="1680" height="1050" />
@@ -238,17 +233,5 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="505" y="233" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581431511052" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue</url>
-          <line>11</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
