@@ -13,9 +13,30 @@ server.listen(port, host, function () {
 server.on('request', function (req, res) {
     console.log('클라이언트 요청이 들어왔습니다. ');
 
-    var filename ='img/img.jpg';
-    var infile =fs.createReadStream(filename,{flags:'r'});
+    var filename = './img/img.jpg';
+    var infile = fs.createReadStream(filename, {flags: 'r'});
+    var filelength = 0;
+    var curlength = 0;
 
-    //파이프로 연결하여 알ㅇ서 처리하도록 설정
-    infile.pipe(res);
+    fs.stat(filename, function (err, stats) {
+        filelength = stats.size;
+    });
+
+    res.writeHead(200, {"Contents-Type": "image/jpeg"});
+
+    infile.on('readable', function () {
+        var chunk;
+        while (null !== (chunk = infile.read())) {
+            console.log("읽어 들인 데이터 크기 : %d 바이트", chunk.length);
+            curlength += chunk.length;
+            res.write(chunk, 'utf8', function (err) {
+                console.log('파일 부분 쓰기 완료 :%d , 파일크기: %d', curlength, filelength);
+                if (curlength >= filelength) {
+                    res.end();
+                }
+
+            });
+        }
+    });
 });
+
