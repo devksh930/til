@@ -1,3 +1,7 @@
+/*
+ URL파라미터 사용하기  /process/login 뒤에 오는값을 파라미터로 사용하기 (토큰방식)
+ */
+
 var express = require('express')
     , http = require('http')
     , path = require('path');
@@ -25,17 +29,20 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(static(path.join(__dirname, 'public')));
 
-router.route('/process/login').post(function (req, res) {
-    console.log('/process/login 처리함 ');
+//login 다음 오는값을 파라미터로 처리하겠다는 의미
+router.route('/process/login/:name').post(function (req, res) {
+    console.log('/process/login:name 처리함 ');
 
+    var paramName = req.params.name;
     var paramId = req.body.id || req.query.id;
     var paramPassword = req.body.pw || req.query.pw;
 
     res.writeHead('200', {'Content-Type': 'text/html; charset=utf-8'});
     res.write('<h1>Express 서버에서 응답한 결과입니다</h1>');
+    res.write('<div><p>Param name: ' + paramName + '</p></div>');
     res.write('<div><p>Param id: ' + paramId + '</p></div>');
     res.write('<div><p>Param password : ' + paramPassword + '</p></div>');
     res.end();
 });
 
-app.use('/',router);
+app.use('/', router);

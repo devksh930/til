@@ -1,3 +1,7 @@
+/*
+ cookie-parser를 활용한 쿠키관리하기a
+ */
+
 var express = require('express')
     , http = require('http')
     , path = require('path');
@@ -7,7 +11,8 @@ var bodyParser = require('body-parser')
 
 var app = express();
 var router = express.Router();
-
+var expressErrorHandler = require('express-error-handler');
+var cookieParser = require('cookie-parser');
 // app.use(function (req, res, next) {
 //     console.log('첫 번째 미들웨어에서 요청을 처리함');
 //
@@ -24,18 +29,32 @@ app.use(bodyParser.urlencoded({extended: false}));
 //body-parser를 사용해 app/json 파싱
 app.use(bodyParser.json());
 app.use(static(path.join(__dirname, 'public')));
+//cookie-parser
+app.use(cookieParser());
 
-router.route('/process/login').post(function (req, res) {
-    console.log('/process/login 처리함 ');
+router.route('/process/showCookie').get(function (req, res) {
+    console.log('/process/showCookie 호출됨');
+    res.send(req.cookie);
+});
+router.route('/process/setUserCookie').get(function (req, res) {
+    console.log('/process/setUserCookie');
 
-    var paramId = req.body.id || req.query.id;
-    var paramPassword = req.body.pw || req.query.pw;
+    res.cookie('users', {
+        id: 'devksh930',
+        name: '김성호',
+        authorized: true
+    });
 
-    res.writeHead('200', {'Content-Type': 'text/html; charset=utf-8'});
-    res.write('<h1>Express 서버에서 응답한 결과입니다</h1>');
-    res.write('<div><p>Param id: ' + paramId + '</p></div>');
-    res.write('<div><p>Param password : ' + paramPassword + '</p></div>');
-    res.end();
+    res.redirect('/process/showCookie');
+});
+app.use('/', router);
+
+var errorHandler = expressErrorHandler({
+    static: {
+        '404': './public/404.html'
+    }
 });
 
-app.use('/',router);
+app.use(expressErrorHandler.httpError(404));
+app.use(errorHandler);
+

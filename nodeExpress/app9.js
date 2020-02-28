@@ -1,3 +1,7 @@
+/*
+express 에러 핸들러 미들웨어 오류페이지 보내기
+ */
+
 var express = require('express')
     , http = require('http')
     , path = require('path');
@@ -7,7 +11,7 @@ var bodyParser = require('body-parser')
 
 var app = express();
 var router = express.Router();
-
+var expressErrorHandler = require('express-error-handler');
 // app.use(function (req, res, next) {
 //     console.log('첫 번째 미들웨어에서 요청을 처리함');
 //
@@ -39,3 +43,12 @@ router.route('/process/login').post(function (req, res) {
 });
 
 app.use('/',router);
+
+var errorHandler = expressErrorHandler({
+    static:{
+        '404': './public/404.html'
+    }
+});
+
+app.use(expressErrorHandler.httpError(404));
+app.use(errorHandler);
