@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 import styled from "styled-components";
 import axios from "axios";
+import usePromise from "../lib/usePromise";
 
 const uri = "https://newsapi.org/v2/top-headlines?country=kr";
 const apikey = `&apiKey=197b4c27cb4c40d79476c43b8a3b7bee`;
@@ -22,36 +23,45 @@ const NewsListBlock = styled.div`
 `;
 
 const NewsList = ({ category }) => {
-  const [articles, setArticles] = useState(null);
-  const [loading, setLoading] = useState(false);
+  // const [articles, setArticles] = useState(null);
+  // const [loading, setLoading] = useState(false);
+  //
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const query = category === "all" ? "" : `&category=${category}`;
+  //
+  //       const response = await axios.get(uri + query + apikey);
+  //       setArticles(response.data.articles);
+  //     } catch (e) {
+  //       console.error(e);
+  //     }
+  //     setLoading(false);
+  //   };
+  //   fetchData();
+  // }, [category]);//빈종속리스트를 주면 처음 렌더링 될때만 이함수를 정의
+  const [loading, response, error] = usePromise(() => {
+    const query = category === "all" ? "" : `&category=${category}`;
+    return axios.get(uri + query + apikey);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const query = category === "all" ? "" : `&category=${category}`;
-
-        const response = await axios.get(uri + query + apikey);
-        setArticles(response.data.articles);
-      } catch (e) {
-        console.error(e);
-      }
-      setLoading(false);
-    };
-    fetchData();
-  }, [category]);//빈종속리스트를 주면 처음 렌더링 될때만 이함수를 정의
+  }, [category]);
 
   if (loading) {
     return (
       <NewsListBlock>뉴스 목록 로딩중 ....</NewsListBlock>
     );
   }
-
-  if (!articles) {
+  if (error) {
+    return (
+      <NewsListBlock>뉴스 목록 로딩중 오류발생</NewsListBlock>
+    );
+  }
+  if (!response) {
     return null;
   }
 
-
+  const { articles } = response.data;
   return (
     <NewsListBlock>
       {
