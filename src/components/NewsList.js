@@ -3,7 +3,7 @@ import NewsItem from "./NewsItem";
 import styled from "styled-components";
 import axios from "axios";
 
-const uri = "http://newsapi.org/v2/top-headlines?country=kr";
+const uri = "https://newsapi.org/v2/top-headlines?country=kr";
 const apikey = `&apiKey=197b4c27cb4c40d79476c43b8a3b7bee`;
 
 
