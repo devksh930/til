@@ -1,0 +1,22 @@
+{
+  "name": "visualized-sort-algorithm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "next": "9.3.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.155",
+    "@types/node": "^13.13.10",
+    "@types/react": "^16.9.35",
+    "typescript": "^3.9.5"
+  }
+}
