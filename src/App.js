@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MainRouter from './Router/MainRouter';
+import { AppContextProvider } from './Context/AppContext';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <AppContextProvider>
+      <MainRouter />
+    </AppContextProvider>
   );
 }
 
