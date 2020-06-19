@@ -14,11 +14,11 @@ const WeatherSubDgree = () => {
   return (
     <ul className="subContainer">
       {weatherState.POP.map((POP, i) => {
-        if (i > 5) return null;
+        if (i > 12) return null;
         return (
           <li className="subLi" key={i}>
             <TimeText time={weatherState.SKY[i].time} />
-            <PopIcon POP={weatherState.POP[i]} size="2.5rem" />
+            <PopIcon POP={weatherState.POP[i]} size="2rem" />
             <PopText percentage={POP.value} />
           </li>
         );

@@ -1,19 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import NowWeather from '../Organisms/NowWeather';
-import WeatherSubDgree from '../Molecules/WeatherSubDegree';
-import WeatherSubPop from '../Molecules/WeatherSubPop';
-import ToHome from '../Atoms/ToHome';
-// import WeatherSubRouter from '../../Router/WeatherSubRouter';
+import ToUltraBtn from '../Atoms/ToUltraBtn';
 
 const WeatherTemplate = () => {
   return (
     <div>
       <NowWeather />
+      <ToUltraBtn />
       {/* <WeatherSubRouter /> */}
-      <WeatherSubDgree />
-      <WeatherSubPop />
-      <ToHome />
     </div>
   );
 };

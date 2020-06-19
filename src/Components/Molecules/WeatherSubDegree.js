@@ -14,12 +14,12 @@ const WeatherSubDgree = () => {
   return (
     <ul className="subContainer">
       {weatherState.T3H.map((T3H, i) => {
-        if (i > 5) return null;
+        if (i > 12) return null;
         return (
           <li className="subLi" key={i}>
             <TimeText time={weatherState.SKY[i].time} />
-            <WeatherIcon SKY={weatherState.SKY[i]} PTY={weatherState.PTY[i]} size="2.7rem" />
-            <DegreeText T3H={T3H} size="0.9rem" />
+            <WeatherIcon SKY={weatherState.SKY[i]} PTY={weatherState.PTY[i]} size="2rem" />
+            <DegreeText T3H={T3H} size="0.5rem" />
           </li>
         );
       })}

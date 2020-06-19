@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Weather from '../Pages/Weather';
-import hello from '../Pages/Hello';
+import Weather2 from '../Pages/Weather2';
 // import Dust from '../Pages/Dust';
 
 const MainRouter = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Weather} />
-        <Route path="/misaemisae" component={hello} />
+        <Route exact path="/" component={Weather2} />
+        <Route path="/ultrafcst" component={Weather} />
         <Route
           render={({ location }) => (
             <div>
