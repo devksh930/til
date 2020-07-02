@@ -14,6 +14,7 @@
 <H3>전략(strategy)</H3>
 - 기능을 구현할때 어떠한 알고리즘([칼](./src/com/devksh930/Strategy/Knife.java), [검](./src/com/devksh930/Strategy/Sword.java))등을 추상 클래스로 구현하고 각각의 알고리즘을 필요할때 [교환](./src/com/devksh930/Strategy/StrategyMain.java)해서 사용 할수 있도록 만든다
 
+
 <H3>어댑터 패턴(Adapter)</H3>
 - 연관성 없는 두 객체를 묶어서 사용한다.
 - 미리 주어진 함수를 요구사항에 맞춰 변경해서 사용할수 있다.
