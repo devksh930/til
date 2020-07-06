@@ -28,6 +28,9 @@ BookRepository bookRepository;</code>
 </pre>
 
 <h3>같은 타입의 빈이 여러개 일 때 </h3>
-- @Primary(어노테이션을 통해 주로 사용하려고 하는 빈을 선)택
+
+- @Primary(어노테이션을 통해 주로 사용하려고 하는 빈을 선택)
+
 - 해당타입 빈 모두 주입 받기
+
 - @Qualifier (빈이름을 통해 주입받기)
