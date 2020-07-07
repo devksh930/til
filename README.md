@@ -23,7 +23,10 @@
 - 구현된 객체의 반환읜 [double](./src/com/devksh930/Adapter/Math.java)로 한다 하지만 요구사항은 [Float](./src/com/devksh930/Adapter/AdapterImpl.java)으로 반환되어야 한다
 
 
-<H3>탬플릿 메소드 패턴턴(template method)</H3>
+<H3>탬플릿 메소드 패턴(template method)</H3>
 
 - 알고리즘의 [구조를 메소드에 정의](./src/com/devksh930/TemplateMethod/dp/AbstGameConnectHelper.java) 하고 하위 클래스에서 [알고리즘 구조의 변경없이 알고리즘](./src/com/devksh930/TemplateMethod/dp/DefaultGameConnectHelper.java)을 재정의 한다.
 - 구현하려는 알고리즘의 일정한 프로세스가 있다 구현하려는 알고리즘이 변경 가능성이 있을경우 사용.
+
+<H3>팩토 메소드 패턴(factory method)</H3>
+정리필요
