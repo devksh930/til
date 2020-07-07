@@ -26,4 +26,5 @@
 
 ★실질적으로 prototype 객채를 주입하는것이 아닌  prototype 빈을 감싸고 있는 proxy를 주입함
 
-[Object-provider](./src/main/java/me/devksh930/beanscope/demo/Single.java) 이용
+<h3>Object-Provider이용</h3>
+- [Object-provider](./src/main/java/me/devksh930/beanscope/demo/Single.java) 이용
