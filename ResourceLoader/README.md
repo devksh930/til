@@ -39,6 +39,6 @@
 > - WebApplicationContext —> ServletContextResource
 
 ### ApplicationContext의 타입에 상관없이 리소스 타입을 강제하려면 java.net.URL 접두어(+classpath:)중 하나를 사용할수 있다
-####(명시적인 방법이므로 추천)
+#### (명시적인 방법이므로 추천)
 - Classpath:me/devksh930/config.xml -> ClassPathResource
 - File://some/resource/path/config.xml -> FileSystemResource
