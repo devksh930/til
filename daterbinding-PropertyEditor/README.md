@@ -8,7 +8,7 @@
 ## org.springframework.validation.DataBinder
 - 고전적인 방식의 데이터 바인딩
 
-> ###EventEditor extends PropertyEditorSupport
+> ### EventEditor extends PropertyEditorSupport
 ><p>String getAsText()</p>
 ><p>void setAsText(String text)</p>
 
