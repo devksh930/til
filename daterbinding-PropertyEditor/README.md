@@ -13,6 +13,9 @@
 ><p>void setAsText(String text)</p>
 
 - Spring3.0 이전까지 DataBinder가 변환 작업을 위해 사용하던 인터페이스
+
+- Object와 String간의 변환만 가능하다(사용범위가 제한적)
+
 - 쓰레드 세이프 하지 않다
 >getValue, setValue는 PropertyEditor가 가지고 있는 값이다 이 값이 서로다른 쓰레드에게 공유가 가능하다. statefull하다 상태정보를 저장하고 있어서 쓰레드세이프 하지 않다. 구현체들은 여러쓰레드에 공유해서 사용하면 안된다. 
 ><p>예: bean으로 등록해서 사용할경우 심각한 문제가 발생한다.</p>
