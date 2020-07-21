@@ -1,4 +1,4 @@
-package daterbindingpropertyeditor.demo;
+package databindingconverterformatter.demo;
 
 public class Event {
 
