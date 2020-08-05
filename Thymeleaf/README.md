@@ -14,3 +14,10 @@
 - https://www.thymeleaf.org/ 레퍼런스
 - 의존성 추가 : spring-boot-starter-thymeleaf
 - 템플릿 파일 위치 : /src/main/resources/template/
+
+## HtmlUnit
+- html을 단위 테스트 하기위한 툴
+- 의존성 추가 htmlunit-driver, htmlunit 스코프는 test로
+- html 웹클라이언트를 만들어서 사용한다.
+- 특정 브라우저인척 가능
+- html 특정 element를 확인할수도 있다.
