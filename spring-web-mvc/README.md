@@ -38,3 +38,11 @@
 >> - webjars-locator-core 의존성추가(리소스 체이닝)
 >> <pre><code>src="/webjars/jquery/3.5.1/dist/jquery.min.js" => src="/webjars/jquery/dist/jquery.min.js"</code></pre>
 ## index 페이지와 파비콘
+###index
+- index.html 찾아보고 있으면 제공 
+- index,템플릿 찾아보고 있음녀 제공
+- 둘 다없을시 에러페이지(tomcat이 아닌 spring에서 제공하는 404error 페이지 띄움)
+
+### 파비콘
+- favicon.ico
+- 스프링에서 자동으로 지원함
