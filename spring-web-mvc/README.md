@@ -31,3 +31,10 @@
                  .setCachePeriod(20);
 }</code></pre>
 
+## web jar
+- npm이나 부트스트랩, jquery등 jar파일로 가져올수 있다.
+- 웹Jar 맵핑 "/webjars/**"
+> - 버전 생략하고 사용하려면 
+>> - webjars-locator-core 의존성추가(리소스 체이닝)
+>> <pre><code>src="/webjars/jquery/3.5.1/dist/jquery.min.js" => src="/webjars/jquery/dist/jquery.min.js"</code></pre>
+## index 페이지와 파비콘
