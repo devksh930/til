@@ -18,3 +18,4 @@
 - MySQL 라이센스 (GPL) 주의
 - MySQL 대신 MariaDB 사용 검토 
 - 소스코드공개의무여부확인
+
