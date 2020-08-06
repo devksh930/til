@@ -33,3 +33,20 @@
 - schema.sql 또는 schema-${platform}.sql
 - data.sql 또는 schema-${platform).sql
 - ${platform) 값은 spring.datasource.platform으로 설정가능
+
+# DB-Migration
+- Flyway, Liquibase가 대표적이다. Flyway사용
+
+### 의존성
+- org.flywaydb:flyway-core
+
+### 마이그레이션 디렉토리
+- db/migration/{vendor}
+- spring.flyway.locations로 변경가능
+
+### 마이그레이션 파일 이름
+- V숫자__이름.sql
+- V는 꼭 대문자
+- 숫자는 순차적(timestamp 권장)
+- 숫자와 이름 사이에 언더바 두개
+- 이름은 가능한 서술적으로
