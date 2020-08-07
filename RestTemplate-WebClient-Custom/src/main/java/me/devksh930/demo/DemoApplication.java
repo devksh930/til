@@ -26,13 +26,13 @@ public class DemoApplication {
         };
     }
 
-    @Bean
-    public RestTemplateCustomizer restTemplateCustomizer() {
-        return new RestTemplateCustomizer() {
-            @Override
-            public void customize(RestTemplate restTemplate) {
-                restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
-            }
-        }
-    }
+//    @Bean
+//    public RestTemplateCustomizer restTemplateCustomizer() {
+//        return new RestTemplateCustomizer() {
+//            @Override
+//            public void customize(RestTemplate restTemplate) {
+//                restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
+//            }
+//        }
+//    }
 }
