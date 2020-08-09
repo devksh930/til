@@ -42,7 +42,7 @@ public class JpaMain {
 
         //목록 조회
         List<Member> members = em.createQuery("select m from Member m", Member.class).getResultList();
-        
+
         System.out.println("members.size = " + members.size());
 
         em.remove(member);
