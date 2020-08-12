@@ -71,4 +71,16 @@ em.persist(board)</code></pre>
 - 키본키 생성을 데이터베이스에 위임하는 전략 
 - MySQL, PostgreSQL, SQL Server, DB2에서 사용
 > - 예 : MySQL의 AUTO_INCREMENT 기능 DB가 자동으로 기본 키생성
-
+- IDETITY 전략은 데이터베이스에 값을 저장하고 나서야 기본키 값을 구할수 있을때 사용한다. 
+> - AUTO_INCREMENT
+- @GeneratedValue(strategy = GenerationType.IDENTITY) 지정
+- JPA는 기본키 값을 받아오기 위해 추가적인 db조회를 한다.략
+> 엔티티가 영속상태가 되려면 식별자가 반드시 필요한데 IDENTITY 전략은 엔티티를 DB등록 해야지만 식별자를 구할수 있으므로 em.persist()를 호출하는 즉시 INSERT SQL이 동작하므로 트랜잭션을 지원하는 쓰기 지연이 제대로 동작하지 않는다.
+### SEQUENCE 전략
+- 데이터베이스 시퀀스는 유일한값을 순서대로 생성하는 db오브젝트 이다. 이 SEQUENCE를 이용해 기본키를 생성하늕 전략
+- @SequenceGenerator를 통하여 시퀀스 생
+- em.persist()호출시 db 시퀀스를 이용해 식별자 조회후 조회한 식별자를 엔티티 할당부터 하고 엔티티를 영속성 컨텍스트에 저장 후 트랜잭션을 커밋
+> - IDENTIY전략은 반대임 엔티티를 저장후 식별자를 조회
+### TABLE 전략
+- 키생성 전용 테이블을 하나 만들고 여기에 이름과 값으로 사용할 컬럼을 만들어 시퀀스를 흉내내는 전략
+- 모든 DB에 적용 가능

@@ -14,7 +14,7 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         try {
             tx.begin();
-            logic(em);
+            seq_logic(em);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
@@ -24,7 +24,10 @@ public class JpaMain {
         emf.close();
     }
 
-    private static void logic(EntityManager em) {
+    private static void seq_logic(EntityManager em) {
+        Board board = new Board();
+        em.persist(board);
+        System.out.println("board.id = " + board.getId());
 
     }
 
