@@ -71,7 +71,7 @@ em.persist(board)</code></pre>
 - 키본키 생성을 데이터베이스에 위임하는 전략 
 - MySQL, PostgreSQL, SQL Server, DB2에서 사용
 > - 예 : MySQL의 AUTO_INCREMENT 기능 DB가 자동으로 기본 키생성
-- IDETITY 전략은 데이터베이스에 값을 저장하고 나서야 기본키 값을 구할수 있을때 사용한다. 
+- IDENTITY 전략은 데이터베이스에 값을 저장하고 나서야 기본키 값을 구할수 있을때 사용한다. 
 > - AUTO_INCREMENT
 - @GeneratedValue(strategy = GenerationType.IDENTITY) 지정
 - JPA는 기본키 값을 받아오기 위해 추가적인 db조회를 한다.략
@@ -85,3 +85,12 @@ em.persist(board)</code></pre>
 - 키생성 전용 테이블을 하나 만들고 여기에 이름과 값으로 사용할 컬럼을 만들어 시퀀스를 흉내내는 전략
 - 모든 DB에 적용 가능
 - TABLE전략은 시퀀스 대신 테이블을 사용한다는 것만 제외 하면 SEQUENCE전략과 내부 동작 방식이 동일하다.
+### AUTO 전략
+- 데이터 베이스의 종류도 많고 기본키를 만드는 방법도 다양하다. GenerationType.AUTO는 선택한 데이터베이스 방언에 따라 IDENTITY, SEQUENCE, TABLE 전략 중 하나를 자동으로 선택한다.
+> - 오라클 이용시 SEQUENCE를 , MYSQL 사용시 IDENTITY를 사용한다.
+#### 기본키 매핑 정리
+- 영속성 컨텍스트는 엔티티를 식별자 값을 구분한다. 엔티티를 영속 상태로 만들려면 식별자 값이 반드시 있어야한다.
+- 직접 할당 : em.persist()를 호출하기 전에 애플리케이션에서 직접 식별자 값을 할당해야한다(식별자 없을시 예외 발생)
+- SEQUENCE : 데이터베이스 시퀀스에서 식별자 값을 획득한 후 영속성 컨텍스트에 저장한다.
+- TABLE : 데이터베이스 시퀀스 생성용 테이블에서 식별자 값을 획득한 후 영속성 컨텍스트에 저장
+- IDENTITY : 데이터베이스에 엔티티를 저장해서 식별자 갑승ㄹ 획득한 후 영속성 컨텍스트에 저장(테이블에 저장을해야 식별자값이 획득이 가능하다.)
