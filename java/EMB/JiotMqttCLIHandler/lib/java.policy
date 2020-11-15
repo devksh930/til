@@ -1,0 +1,7 @@
+grant {
+    permission jdk.dio.DeviceMgmtPermission "*:*", "open";
+    permission jdk.dio.gpio.GPIOPinPermission "*:*";
+    permission jdk.dio.i2cbus.I2CPermission "*:*";
+    permission jdk.dio.spibus.SPIPermission "*:*";
+    permission jdk.dio.uart.UARTPermission "*:*";
+};
