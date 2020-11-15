@@ -1,0 +1,26 @@
+.subContainer {
+  width: 200%;
+  display: flex;
+  justify-content: space-around;
+  background-color: gray;
+  margin: 0;
+  padding: 0;
+  height: 10vh;
+  list-style: none;
+  padding: 0 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.DegreeText {
+  font-size: 18px;
+}
+
+.subLi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  width: 50px;
+}
