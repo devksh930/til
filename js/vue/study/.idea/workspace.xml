@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st10_MineSweeper/Minesweeper.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st10_MineSweeper/TableComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/st10_MineSweeper/TableComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/st10_MineSweeper/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/st10_MineSweeper/store.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Vuewebgame" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="devksh930 &lt;devksh930@icloud.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1Sjq9Te2ByScg5BxMHW2xNpaDKX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/st10_MineSweeper" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/st10_MineSweeper" />
+      <recent name="$PROJECT_DIR$/st8_Tic_Tac_Toe(Vuex)" />
+      <recent name="$PROJECT_DIR$/st7_Tic_Tac_Toe(EvenvtBus)" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Tic_Tac_Toe" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/gugudan" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.ResponseCheck.html">
+    <configuration name="Numberbaseball.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="Numberbaseball.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st3_baseball/Numberbaseball.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="ResponseCheck.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/st4_reponsecheck/ResponseCheck.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="WordRelay.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/Last_and_First/WordRelay.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="gugudan.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Vuewebgame/gugudan/gugudan.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.ResponseCheck.html" />
+        <item itemvalue="JavaScript Debug.Numberbaseball.html" />
+        <item itemvalue="JavaScript Debug.Numberbaseball.vue" />
+        <item itemvalue="JavaScript Debug.WordRelay.html" />
+        <item itemvalue="JavaScript Debug.gugudan.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="448331fe-cabc-44af-891e-5cf92d7d3614" name="Default Changelist" comment="" />
+      <created>1572087200674</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572087200674</updated>
+      <workItem from="1572087201820" duration="28000" />
+      <workItem from="1572087232053" duration="7311000" />
+      <workItem from="1572107145830" duration="904000" />
+      <workItem from="1572109057156" duration="11619000" />
+      <workItem from="1572163482864" duration="967000" />
+      <workItem from="1572165461205" duration="4096000" />
+      <workItem from="1572170493243" duration="2029000" />
+      <workItem from="1572235046579" duration="240000" />
+      <workItem from="1572236085249" duration="1565000" />
+      <workItem from="1572357907094" duration="1248000" />
+      <workItem from="1572847888396" duration="25000" />
+      <workItem from="1572847935995" duration="6041000" />
+      <workItem from="1572960919097" duration="6126000" />
+      <workItem from="1572968515809" duration="297000" />
+      <workItem from="1573398235384" duration="2300000" />
+      <workItem from="1573448581434" duration="488000" />
+      <workItem from="1573653030850" duration="159000" />
+      <workItem from="1573722889583" duration="45000" />
+      <workItem from="1573747767900" duration="7527000" />
+      <workItem from="1573829494849" duration="328000" />
+      <workItem from="1573834867156" duration="623000" />
+      <workItem from="1573835585087" duration="4100000" />
+      <workItem from="1573983158512" duration="124000" />
+      <workItem from="1573983300095" duration="8000" />
+      <workItem from="1574001693177" duration="2384000" />
+      <workItem from="1574004244536" duration="2405000" />
+      <workItem from="1575025443998" duration="22000" />
+      <workItem from="1575025499656" duration="30000" />
+      <workItem from="1575025546317" duration="5782000" />
+      <workItem from="1577019891526" duration="23000" />
+      <workItem from="1581430538171" duration="3322000" />
+    </task>
+    <task id="LOCAL-00001" summary="vue-globalcomponent, template">
+      <created>1572111514697</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572111514697</updated>
+    </task>
+    <task id="LOCAL-00002" summary="webpack init, v-for">
+      <created>1572118096238</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572118096238</updated>
+    </task>
+    <task id="LOCAL-00003" summary="webpack init, v-for">
+      <created>1572118160857</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572118160857</updated>
+    </task>
+    <task id="LOCAL-00004" summary="vue life-cycle">
+      <created>1572851089526</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572851089526</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="vue-globalcomponent, template" />
+    <MESSAGE value="webpack init, v-for" />
+    <MESSAGE value="vue life-cycle" />
+    <option name="LAST_COMMIT_MESSAGE" value="vue life-cycle" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="440" y="189" key="#Configure_Path_Variables" timestamp="1581431363478">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="189" key="#Configure_Path_Variables/0.0.1680.1050@0.0.1680.1050" timestamp="1581431363478" />
+    <state x="520" y="324" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581432079196">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="520" y="324" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1581432079196" />
+    <state x="351" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581431400358">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="351" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1581431400358" />
+    <state x="80" y="122" key="SettingsEditor" timestamp="1581434015024">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="80" y="122" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1581434015024" />
+    <state x="379" y="175" key="SettingsEditor/0.23.1680.1027@0.23.1680.1027" timestamp="1575025529398" />
+    <state x="503" y="271" width="674" height="508" key="find.popup" timestamp="1581431508132">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="503" y="271" width="674" height="508" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581431508132" />
+    <state x="505" y="233" key="search.everywhere.popup" timestamp="1581431511052">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1581431511052" />
+  </component>
+</project>
