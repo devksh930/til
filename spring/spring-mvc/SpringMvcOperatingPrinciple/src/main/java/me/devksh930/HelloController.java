@@ -11,7 +11,7 @@ public class HelloController {
     @Autowired
     HelloService helloService;
 
-    @GetMapping("/hello")
+    @GetMapping("/hello/{id}")
     @ResponseBody
     public String hello() {
         return "Hello" + helloService.getName();
