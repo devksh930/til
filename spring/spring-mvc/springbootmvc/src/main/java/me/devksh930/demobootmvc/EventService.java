@@ -1,4 +1,4 @@
-package me.devksh930.demospringmvc;
+package me.devksh930.demobootmvc;
 
 import org.springframework.stereotype.Service;
 

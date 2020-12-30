@@ -1,4 +1,4 @@
-package me.devksh930.demospringmvc;
+package me.devksh930.demobootmvc;
 
 import lombok.Builder;
 import lombok.Getter;

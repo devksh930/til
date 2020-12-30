@@ -1,13 +1,13 @@
-package me.devksh930.demospringmvc;
+package me.devksh930.demobootmvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoSpringMvcApplication {
+public class DemobootmvcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoSpringMvcApplication.class, args);
+        SpringApplication.run(DemobootmvcApplication.class, args);
     }
 
 }
