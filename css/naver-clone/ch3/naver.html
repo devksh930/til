@@ -8,7 +8,8 @@
 </head>
 <body>
 <header>
-    <div id="header-center"> <!-- 가운데 정렬용 div -->
+    <div id="fixed"></div>
+    <div class="center-align"> <!-- 가운데 정렬용 div -->
         <div>
             <span> 네이버를 시작페이지로</span>
             <span> 쥬니어네이버</span>
@@ -24,21 +25,29 @@
             <fieldset>
                 <legend class="blind">검색</legend>
                 <input type="text"/>
-                <button class="blind">검색</button>
+                <button>
+                    <span class="blind">검색</span>
+                    <span id="search-image"></span>
+                </button>
             </fieldset>
         </div>
     </div>
 </header>
 <nav>
-    <ul>
-        <li>메일</li>
-        <li>카페</li>
-        <li>블로그</li>
-        <li>지식인</li>
-        <li>쇼핑</li>
-        <li>네이버페이</li>
-    </ul>
+    <div class="center-align">
+        <ul>
+            <li><a href=""><span></span><span class="blind">메일</span></a></li>
+            <li><a href=""><span></span><span class="blind">카페</span></a></li>
+            <li><a href=""><span></span><span class="blind">블로그</span></a></li>
+            <li><a href=""><span></span><span class="blind">지식인</span></a></li>
+            <li><a href=""><span></span><span class="blind">쇼핑</span></a></li>
+            <li><a href=""><span></span><span class="blind">네이버페이</span></a></li>
+            <li><a href=""><span></span><span class="blind">네이버쇼핑</span></a></li>
+
+        </ul>
+    </div>
 </nav>
+
 <main>
     <h3>실시간 검색어</h3>
     <h3>연합뉴시</h3>

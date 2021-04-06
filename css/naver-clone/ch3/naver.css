@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 .blind {
     position: absolute;
     overflow: hidden;
@@ -12,7 +17,8 @@
 }
 
 /* 선택자(selector)*/
-#header-center {
+/*#header-center{*/
+.center-align {
     margin: 0 auto;
     width: 1080px;
 }
@@ -31,7 +37,8 @@
     /*한방에 아래처럼도 가능하다*/
     background: url(./sp_search.png) -4px -4px no-repeat;
     vertical-align: middle;
-
+    position: relative;
+    top: -6px;
 }
 
 #header-search h1 span {
@@ -56,6 +63,7 @@
     border: 2px solid #03cf5d;
     /*box-sizing: content-box; defalut로 content의 사이즈만 가르킴*/
     vertical-align: middle;
+    position: relative;
 
 }
 
@@ -63,4 +71,90 @@
     border: none;
     padding: 0;
     outline: none;
+    vertical-align: top;
+    width: 405px;
+    display: inline-block;
+}
+
+#header-search fieldset button {
+    width: 49px;
+    height: 49px;
+    border: none;
+    padding: 0;
+    background: #03cf5d;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+
+#search-image {
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    background-position: -3px -60px;
+    margin: 14px;
+
+}
+
+
+#fixed {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav li span:first-child {
+    height: 16px;
+    display: inline-block;
+    margin-left: 14px;
+    background-repeat: no-repeat;
+    background-image: url(./sp_nav.png);
+}
+
+nav li:first-child span:first-child {
+    width: 25px;
+    margin-left: 0;
+    background-position: 0 -285px;
+}
+
+nav li:nth-child(2) span:first-child {
+    width: 27px;
+    background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+    width: 40px;
+    background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+    width: 40px;
+    background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+    width: 26px;
+    background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+    width: 25px;
+    background-position: -70px -285px;
 }
