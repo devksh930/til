@@ -110,3 +110,38 @@ private Team team;
 
 - 일대일 매핑에서 대상 테이블에 외래키를 두고 싶으면 이렇게 양방향ㅇ으로 매핑한다 주 엔티티인 `Member`엔티티 대신에 대상인 엔티티인 `Locekr`를 연관관계의 주인으로 만들어서 `LOCKER`테이블의
   외래키를 관리하도록한다.
+
+## 다대다 [N:N]
+
+관계형 데이터 베이스는 정규화된 테이블 2개로 다대다 관계 표현할수 없다. 그래서 보통 다대다 관계를 일대다, 다대일 관계로 풀어내는 연결 테이블을 사용한다.
+
+![image](https://user-images.githubusercontent.com/45715241/115946208-aad81800-a4fa-11eb-84f2-4ee2c6c42169.png)
+> 예를 들어 회원들은 상품을 주문한다.
+> 상품은 회원들에 의해 주문된다. 이 둘은 다대다 관계이며 회원테이블과 상품 테이블 만으로는 이 관계를 표현할수 없다.
+
+![img.png](img.png)
+> 그래서 위와 같이 중간에 연결 테이블을 추가해야한다.`Member_Product`라는 테이블을 통해 다대다 관계를 1:N, N:1로 풀어 낼수 있다.
+> 이 연결 테이블은 회원이 주문한 상품을 나타낸다.
+
+![img_1.png](img_1.png)
+하지만 객체는 테이블과 다르게 객체 2개로 다대다 관계를 나타낼수 있다.
+> 예를 들어 회우너 객체는 컬렉션을 사용해서 상품들을 참조하면 되고 반대로 상품들도 컬렉션을 사용해서 회원들을 참조 하면된다.
+> `@ManyToMany`를 사용하면 이런 다대다 관계를 편리하게 매핑할수 있다.
+
+#### 단방향
+
+회원 엔티티와 상품엔티티를 `@ManyToMany`로 매핑을 했다. `@ManyToMany`와 `@JoinTable`을 사용해서 연결테이블을 바로 매핑을 하였다. 따라서 회원과 상품을
+연결하는 `MEMBER_PRODUCT` 엔티티 없이 매핑을 할수 있다.
+
+```java
+@ManyToMany
+@JoinTable(name = "MEMBER_PRODUCT", joinColumns = @JoinColumn(name = "MEMBER_ID"),
+        inverseJoinColumns = @JoinColumn(name = "PROUDCT_ID"))
+private List<Product> products=new ArrayList<>();
+
+```
+
+> 위 코드의 연결테이블 매핑하는 `@JoinTable` 속성 정리
+> - `@JoinTable.name` : 연결 테이블을 지정(`MEMBER_PRODUCT`테이블)
+> - `@JoinTable.joinColumns` : 현재 방향인 회원과 매핑할 조인컬럼 정보를 지정 (`MEMBER_ID`로 지정)
+> - `@JoinTable.inverseJoinColumns`: 반대 방향인 상품과 매핑할 조인 컬럼 정보를 지정(`PROUDCT_ID`로 지정)

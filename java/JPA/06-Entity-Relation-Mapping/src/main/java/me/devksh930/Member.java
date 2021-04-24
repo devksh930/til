@@ -4,17 +4,22 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 public class Member {
     @Id
-    @GeneratedValue
     @Column(name = "MEMBER_ID")
-    private Long id;
+    private String id;
 
     private String username;
+
+    @ManyToMany
+    @JoinTable(name = "MEMBER_PRODUCT", joinColumns = @JoinColumn(name = "MEMBER_ID"), inverseJoinColumns = @JoinColumn(name = "PROUDCT_ID"))
+    private List<Product> products = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")
