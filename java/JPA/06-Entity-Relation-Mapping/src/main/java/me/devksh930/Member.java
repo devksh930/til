@@ -18,7 +18,7 @@ public class Member {
     private String username;
 
     @OneToMany(mappedBy = "member")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    private List<OrderDetails> orderdetails = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "TEAM_ID")

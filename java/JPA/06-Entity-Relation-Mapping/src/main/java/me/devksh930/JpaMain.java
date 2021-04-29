@@ -12,8 +12,9 @@ public class JpaMain {
 
         try {
             tx.begin();
-            saveNN(em);
+            saveNNPK(em);
             tx.commit();
+//            findNN(em);
         } catch (Exception e) {
             tx.rollback();
         } finally {
@@ -55,25 +56,56 @@ public class JpaMain {
 
 //    }
 
-    public static void saveNN(EntityManager em) {
-//        다대다를 1:N, N:1로 풀어쓴 엔티티 이용시
+//    public static void saveNN(EntityManager em) {
+////        다대다를 1:N, N:1로 풀어쓴 엔티티 이용시
+//        Member member1 = new Member();
+//        member1.setId("member1");
+//        member1.setUsername("회원1");
+//        em.persist(member1);
+//
+//        Product productA = new Product();
+//        productA.setId("productA");
+//        productA.setName("상품1");
+//        em.persist(productA);
+//
+//        MemberProduct memberProduct = new MemberProduct();
+//        memberProduct.setMember(member1);
+//        memberProduct.setProduct(productA);
+//        memberProduct.setOrderAmount(2);
+//
+//        em.persist(memberProduct);
+//    }
+
+//    public static void findNN(EntityManager em) {
+//        MemberProductId memberProductId = new MemberProductId();
+//        memberProductId.setMember("member1");
+//        memberProductId.setProduct("productA");
+//
+//        MemberProduct memberProduct = em.find(MemberProduct.class, memberProductId);
+//
+//        Member member = memberProduct.getMember();
+//        Product product = memberProduct.getProduct();
+//
+//        System.out.println("member = " + member.getUsername());
+//        System.out.println("product = " + product.getName());
+//        System.out.println("orderAmount = "+ memberProduct.getOrderAmount());
+//    }
+
+    public static void saveNNPK(EntityManager em) {
         Member member1 = new Member();
         member1.setId("member1");
         member1.setUsername("회원1");
         em.persist(member1);
 
         Product productA = new Product();
-        productA.setId("proudctA");
+        productA.setId("productA");
         productA.setName("상품1");
         em.persist(productA);
 
-        MemberProduct memberProduct = new MemberProduct();
-        memberProduct.setMember(member1);
-        memberProduct.setProduct(productA);
-        memberProduct.setOrderAmount(2);
-
-        em.persist(memberProduct);
+        OrderDetails order = new OrderDetails();
+        order.setMember(member1);
+        order.setProduct(productA);
+        order.setOrderAmount(2);
+        em.persist(order);
     }
-
-
 }

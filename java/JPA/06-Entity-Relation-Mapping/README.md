@@ -138,7 +138,6 @@ private Team team;
 @JoinTable(name = "MEMBER_PRODUCT", joinColumns = @JoinColumn(name = "MEMBER_ID"),
         inverseJoinColumns = @JoinColumn(name = "PROUDCT_ID"))
 private List<Product> products=new ArrayList<>();
-
 ```
 
 > 위 코드의 연결테이블 매핑하는 `@JoinTable` 속성 정리
@@ -151,26 +150,29 @@ private List<Product> products=new ArrayList<>();
 다대다 매핑이므로 `Proudct`엔티티에서도 `Member`를 역방향도 `@ManyToMany`로 사용한다. 양쪽중 원하는 곳에 `mappedBy`로 연관관계의 주인을 지정한다.(`mappedBy`가 없는곳이
 연관관계의 주인)
 
-
 ```java
     public static void findInverse(EntityManager em){ //객체그래프 역방향탐색
         Product product=em.find(Product.class,"productA");
         List<Member> members=product.getMembers();
         for(Member member:members){
         System.out.println("member = "+member.getUsername());
-            }
+        }
         }
 ```
+
 - 양방향 연관관계로 만들었으므로 `product.getMembers()`를 이용하여 역방향으로 객체 그래프를 탐색할 수 있다.
 
 ### 다대다: 매핑의 한계와 극복, 연결 엔티티 사용
+
 - 다대다 매핑 (`@ManyToMany`)을 이용하면 연결테이블을 자동으로 처리해주므로 도메인 모델이 단순해지고 여러가지로 편리함
 - 하지만 회원이 주문을 하면 주문한 회원과 물품만 테이블에 담고 끝나지 않고 연결테이블에 주문수량, 주문날짜같은 컬럼이 더필요하다
-![img_2.png](img_2.png)
+  ![img_2.png](img_2.png)
 - 해당 그림을 보면 연결테이블에 주문 수량과 주문 날짜 컬럼을 추가 했다. 이렇게 컬럼을 추가하면 더는 다대다 매핑을 이용할수 없다.
 - 결국 이 다대다 관계를 아래 그림과 같이 1:N, N:1로 풀어야 한다.
-![img_3.png](img_3.png)
+  ![img_3.png](img_3.png)
+
 ```java
+
 @Entity
 @IdClass(MemberProductId.class)
 @Getter
@@ -190,16 +192,32 @@ public class MemberProduct {
     private int orderAmount;
 }
 ```
+
 - 해당 회원상품 엔티티를 보게 되면 기본키를 매핑하는 `@Id`와 외래키를 매핑하는 `@JoinColumn`을 동시에 사용해서 기본키 + 외래키를 한번에 매핑 하였다
 - `@IdClass`를 사용하여 복합 기본키를 매핑했다.
+
 > 복합기본키
 > - 회원 상품 엔티티는 기본키가 `MEMBER_ID`,`PRODUCT_ID`로 이루어져있.
 > - JPA에서 복합 기본키를 사용하려면 별도의 식별자 클래스를 만들어야 한다. 그리고 엔티티에 `@IdClass`를 사용해서 식별자 클래스를 지정하면된다
 > - 복합키를 위한 식별자 클래스
->   - 복합키는 별도의 식별자 클래스로 만들어야 한다.
->   - `Serializable`을 구현해야 한다
+    >
+
+- 복합키는 별도의 식별자 클래스로 만들어야 한다.
+
+> - `Serializable`을 구현해야 한다
 >   - `equals`, `hashCode` 메서드를 구현해야한다
 >   - 기본 생성자가 있어야한다
->   - 식별자 클래스는 public이어야 한다.
+>   - 식별자 클래스는 `public`이어야 한다.
 >   - `@IdClass`를 사용하는 방법 외에 `@EmbeddedId`를 사용하는 방법도 있다.
 
+### 다대다 새로운 기본키사용
+기본키 생성전략을 데이터베이스에서 자동으로 생성해주는 대리 키를 `Long`값으로 사용하면 기본키를 거의 영구히 사용 가능하며 비즈니에 의존하지 않는다.
+ORM 매핑시 복합키를 만들지 않아도 되므로 간단히 매핑이 가능하다.
+![img_4.png](img_4.png)
+> 추가적으로 JPA에서 ORDER 테이블을 매핑할때 오류가 발생 하였는데 
+> DB에서는 ORDER가 예약어 이기 때문에 테이블 명을 변경 해주어야한다  예:-->`@Table(name="orders")`
+
+### 다대다 연관관계 정리
+다대다 관계를 1:N, N:1로 풀어내기 위해 연결 테이블을 만들 때 식별자를 어떻게 구성할지 선택해야한다.
+- 식별관계 : 받아온 식별자를 기본키 + 외래키로 사용
+- 비식별 관계 : 받아온 식별자는 외래키로만 사용하고 새로운 식별자를 추가한다.
