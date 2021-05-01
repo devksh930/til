@@ -41,4 +41,49 @@ ORM에서 이야기하는 상속관계 매핑은 객체의 상속 구조와 데�
 - 구분 컬럼을 꼭 사용해야 한다. `@DiscriminatorColumn`을 꼭 설정해야한다
 - `@DiscriminatorColumn`을 지정하지 않으면 기본으로 엔티티 이름을 사용한다(예: Movie, Album, Book)
 
+#### 구현 클래스마다 테이블 전략
+![img_5.png](img_5.png)
+구현 클래스마다 테이블전략(Table-per-Concrete-Class Strategy)은 그림과 같이 자식 엔티티마다 테이블을 만든다 그리고 자식 테이블 각각에 필요한 컬럼이 모두 있다.
+
+`@Inheritance(strategy = InhritanceType.TABLE_PER_CLASS)` 어노테이션을 통해 해당 전략을 선택하면된다.
+
+장점
+- 서브타입을 구분해서 처리할 때 효과적
+- `not null`제약조건을 사용가능
+
+단점
+- 여러 자식 테이블을 함께 조회할 때 성능이 느리다(`SQL`에 `UNION`을 사용해야한다)
+- 자식 테이블을 통합해서 쿼리하기 어렵다
+
+특징
+- 구분 칼럼을 사용하지 않는다.
   
+#### `@MappedSuperclass`
+![img_7.png](img_7.png)
+
+지금 까지 본 상속관계 매핑은 부모클래스와 자식 클래스를 모두 데이터베이스 테이블과 매핑 했지만 부모클래스는 테이블과 매핑을 하지 않고 부모클래스를 상속 받는 자식 클래스에게 매핑 정보만 제공 하려면 `@MappedSuperClass`를 사용하면된다
+`@MappedSuperclass`는 추상 클래스와 비슷한데 `@Entity`는 실제테이블과 매핑 되지만 `@MappedSuperclass`는 실제 테이블과 매핑되지 않는다.
+- `@MappedSuperclass`로 매핑한 클래스는 `@Entity`로 매핑이 되지 않는다. 해당클래스를 상속받은 클래스는 자식엔티티에게 공통으로 사용되는 매핑정보만 제공한다.
+- 부모로 부터 물려받은 매핑정보를 재정의하려면 `@AttributeOverrides`,`@AttributeOverride`를 사용한다
+>
+> 부모에게 상속 받은 id속성의 컬럼명을 `MEMBER_ID`로 재정의  
+>```java
+>@Entity
+>@AttributeOverride(name = "id", column = @Column(name = "MEMBER_ID"))
+>public class Member extends BaseEntity{...}
+>```
+>둘이상을 재정의 하려면 `@AttributeOverrides`를 이용
+> ```java
+> @Entity
+> @AttributeOverrides({
+> @AttributeOverride(name = "id", column = @Column(name = "MEMBER_ID")),
+> @AttributeOverride(name = "name", column = @Column(name = "MEMBER_NAME"))})
+> public class Member extends BaseEntity {...}
+>```
+- 연관관계를 재정의하려면 `@associationOverrides`나 `@associationOverride`를 사용하면된다.
+
+특징
+- 테이블과 매핑되지 않고 자식 클래스에 엔티티의 매핑 정보를 상속하기 위해 사용
+- `@MappedSuperClass`로 지정한 클래스는 엔티티가 아니므로 `em.find()`나 `JPQL`에서 사용이 불가능하다
+- 이 클래스를 직접 생성해서 사용할 일은 거의 없다. 추상클래스로 만드는것을 권장한다.
+- `@MappedSuperclass`는 테이블과는 관계가 없고 단순히 엔티티가 공통으로 사용하는 매핑정보를 모아주는 역할을 할 뿐이다.
