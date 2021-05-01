@@ -7,7 +7,6 @@ import me.devksh930.entity.supertype.Item;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
-@Entity
 @DiscriminatorValue("A")
 @Getter
 @Setter
