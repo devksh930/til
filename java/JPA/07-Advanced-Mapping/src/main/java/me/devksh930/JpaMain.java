@@ -1,8 +1,5 @@
 package me.devksh930;
 
-import me.devksh930.entity.Board;
-import me.devksh930.entity.BoardDetail;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;

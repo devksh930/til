@@ -599,3 +599,35 @@ public class Child {
 }
 ```
 > 조인테이블에 컬럼을 추가하면 `@JoinTable`전략을 사용할 수없다. 대신에 새로운 엔티티를 만들어 조인테이블과 매핑해야한다.
+
+#### 엔티티 하나에 여러 테이블 매핑
+`@SecondaryTable`을 사용하면 한 엔티티에 여러 테이블 매핑이 가능하다.
+```java
+@Entity
+@Table(name = "BOARD")
+@SecondaryTable(name = "BOARD_DETAIL",
+        pkJoinColumns = @PrimaryKeyJoinColumn(name = "BOARD_DETAIL_ID"))
+public class Board {
+    @Id
+    @GeneratedValue
+    @Column(name = "BOARD_ID")
+    private Long id;
+
+    private String title;
+
+    @Column(table = "BOARD_DETAIL")
+    private String content;
+}
+```
+- `@SecondaryTable`을 사용해서 `BOARD_DETAIL` 테이블을 추가로 매핑했다
+- `@SecondaryTable.name` : 매핑할 다른 테이블의 이름
+- `@SecondaryTable.name` : 매핑할 다른테이블의 기본키 컬럼 속성
+- 더많은 테이블을 매핑하려면 `@SecondaryTables`를 이용하면 된다.
+
+```java
+@SecondaryTables({
+        @SecondaryTable(name = "BOARD_DETAIL"),
+        @SecondaryTable(name = "BOARD_FILE")
+})
+```
+> 참고로 `@SecondaryTable`을 이용해서 두테이블을 하나의 엔티티에 매핑하는 방법은 항상 두테이블을 조회하므로 최적화가 어렵다. 그래서 테이블당 엔티티를 만들어 각각 매핑하는것을 권장한다.

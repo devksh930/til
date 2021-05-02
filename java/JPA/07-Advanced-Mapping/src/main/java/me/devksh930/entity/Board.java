@@ -6,6 +6,9 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "BOARD")
+@SecondaryTable(name = "BOARD_DETAIL",
+        pkJoinColumns = @PrimaryKeyJoinColumn(name = "BOARD_DETAIL_ID"))
 @Getter
 @Setter
 public class Board {
@@ -16,6 +19,6 @@ public class Board {
 
     private String title;
 
-    @OneToOne(mappedBy = "board")
-    private BoardDetail boardDetail;
+    @Column(table = "BOARD_DETAIL")
+    private String content;
 }
