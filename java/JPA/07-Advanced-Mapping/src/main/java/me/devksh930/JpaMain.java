@@ -2,7 +2,6 @@ package me.devksh930;
 
 import me.devksh930.entity.Board;
 import me.devksh930.entity.BoardDetail;
-import me.devksh930.entity.compositeKey.Parent;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,7 +17,7 @@ public class JpaMain {
 
         try {
             tx.begin();
-            OneToOneSave(em);
+//            OneToOneSave(em);
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
@@ -68,14 +67,14 @@ public class JpaMain {
 //
 //        System.out.println(id1.equals(id2));
 //    }
-    public static void OneToOneSave(EntityManager em) {
-        Board board = new Board();
-        board.setTitle("제목");
-        em.persist(board);
-
-        BoardDetail boardDetail = new BoardDetail();
-        boardDetail.setContent("내용");
-        boardDetail.setBoard(board);
-        em.persist(boardDetail);
-    }
+//    public static void OneToOneSave(EntityManager em) {
+//        Board board = new Board();
+//        board.setTitle("제목");
+//        em.persist(board);
+//
+//        BoardDetail boardDetail = new BoardDetail();
+//        boardDetail.setContent("내용");
+//        boardDetail.setBoard(board);
+//        em.persist(boardDetail);
+//    }
 }

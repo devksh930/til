@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -15,9 +17,10 @@ public class Parent {
     private Long id;
     private String name;
 
-    @OneToOne
+    @ManyToMany
     @JoinTable(name = "PARENT_CHILD",
             joinColumns = @JoinColumn(name = "PARENT_ID"),
             inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
-    private Child child;
+    private List<Child> child = new ArrayList<Child>();
+
 }

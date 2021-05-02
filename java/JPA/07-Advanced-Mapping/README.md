@@ -482,10 +482,11 @@ public class Child {
     ...
 }
 ```
+
 - `@JoinTable`의 속성
-  
+
   |속성|내용|
-  |------|--------------------|
+      |------|--------------------|
   |name|매핑할 조인 테이블|
   |joinColumns|현재 엔티티를 참조하는 외래키|
   |inverseJoinColumns|반대방향 엔티티를 참조하는 외래키|
@@ -494,8 +495,107 @@ public class Child {
 ```java
 public class Child {
     ...
-  @OneToOne(mappedBy = "child")
-  private Parent parent;
+    @OneToOne(mappedBy = "child")
+    private Parent parent;
     ...
 }
 ```
+
+#### 일대다 조인 테이블
+
+일대다 관계를 만들려면 조인 테이블의 컬럼중 다(N)와 관련된 컬럼인 `CHILD_ID`에 유니크 제약조건을 걸어야한다.
+
+```java
+
+@Entity
+public class Parent {
+    @Id
+    @GeneratedValue
+    @Column(name = "PARENT_ID")
+    private Long id;
+    private String name;
+
+    @OneToMany
+    @JoinTable(name = "PARENT_CHILD",
+            joinColumns = @JoinColumn(name = "PARENT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
+    private List<Child> child = new ArrayList<Child>();
+}
+
+@Entity
+public class Child {
+    @Id
+    @GeneratedValue
+    @Column(name = "CHILD_ID")
+    private Long id;
+    private String name;
+}
+```
+
+#### 다대일 조인 테이블
+
+다대일은 일대다에서 방향만 반대 이므로 예제에서는 다대일, 일대다 양방향 관계로 매핑
+
+```java
+
+@Entity
+public class Parent {
+    @Id
+    @GeneratedValue
+    @Column(name = "PARENT_ID")
+    private Long id;
+    private String name;
+
+    @OneToMany(mappedBy = "parent")
+    private List<Child> child = new ArrayList<Child>();
+}
+
+@Entity
+public class Child {
+    @Id
+    @GeneratedValue
+    @Column(name = "CHILD_ID")
+    private Long id;
+    private String name;
+
+    @ManyToOne(optional = false)
+    @JoinTable(name = "PARENT_CHILD",
+            joinColumns = @JoinColumn(name = "PARENT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
+    private Parent parent;
+}
+
+```
+
+#### 다대다 조인 테이블
+
+다대다 관계를 만들려면 조인테이블의 두컬럼을 합해서 하나의 복합 유니크 제약조건을 걸어야한다.
+
+```java
+
+@Entity
+public class Parent {
+    @Id
+    @GeneratedValue
+    @Column(name = "PARENT_ID")
+    private Long id;
+    private String name;
+
+    @ManyToMany
+    @JoinTable(name = "PARENT_CHILD",
+            joinColumns = @JoinColumn(name = "PARENT_ID"),
+            inverseJoinColumns = @JoinColumn(name = "CHILD_ID"))
+    private List<Child> child = new ArrayList<Child>();
+
+}
+
+@Entity
+public class Child {
+    @Id
+    @GeneratedValue
+    @Column(name = "CHILD_ID")
+    private Long id;
+    private String name;
+}
+```
+> 조인테이블에 컬럼을 추가하면 `@JoinTable`전략을 사용할 수없다. 대신에 새로운 엔티티를 만들어 조인테이블과 매핑해야한다.
