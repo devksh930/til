@@ -306,3 +306,17 @@ public class Child {
 ...
 ```
 #### `@EmbeddedId`와 식별 관계
+`@EmbeddedId`로 식별 관계를 구성시에는 `@MapsId`를 사용해야한다.
+
+`@EmbeddedId`는 식별관계로 사용할 연관관계의 속성에 `@MapsId`를 사용하면 된다.
+
+`Child`엔티티의 필드를 보면 `@IdClass`와 다른 점은 `@Id`대신 `@MapsId`를 사용한 점이다.
+`@MapsId`는 외래키와 매핑한 연관관계를 기본 키에도 매핑하겠다는 뜻이다.
+해당 어노테이션의 속성 값은 `@EmbeddedId`를 사용한 식별자 클래스의 기본 키 필드를 지정하면 된다.
+여기서는 `ChildId`의 `parentId`필드를 선택했다.
+```java
+    @MapsId("parentId")
+    @ManyToOne
+    @JoinColumn(name = "PARENT_ID")
+    public Parent parent;
+```
