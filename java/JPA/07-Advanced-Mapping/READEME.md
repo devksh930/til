@@ -274,24 +274,30 @@ public class ParentId implements Serializable {
 엔티티가 조회되거나 엔티티를 찾을수 없는등 영속성컨텍스트가 엔티티를 관리하는데 있어서 심각한 문제가 발생할수도있다.
 
 #### `@IdClass`, `@EmbeddedId`
+
 `@IdClass`와 `@EmbeddedId`는 각각 장단점이 있다.
 `@EmbeddedId`가 `@IdClass`와 비교해서 더 객체지향적이고 중복도 없어서 좋아보이긴 하지만 특정 상황에 JPQL이 조금 더 길어질 수 있다.
+
 ```java
 em.createQuesry("select p.id.id1, p.id.id2 from Parent p"); //@EmneddedId
-em.createQuesry("select p.id1, p.id2 from Parent p"); //@IdClass
+        em.createQuesry("select p.id1, p.id2 from Parent p"); //@IdClass
 ```
+
 > 복합키에는 `@GenerateValue`를 사용할 수 없다. 복합 키를 구성하는 여러 컬럼중 하나에도 사용할 수 없다.
 
 ### 복합 키 식별관계 매핑
+
 ![img_11.png](img_11.png)
 
-해당 테이블은 부모, 자식, 손자까지 계속 기본 키를 전달하는 식별 관계이다.
-식별관계에서 자식 테이블은 부모 테이블의 기본 키를 포함해서 복합 키를 구성해야 하므로 `@IdClass`나 `@EmbeddedId`를 사용해서 식별자를 매핑해야한다.
+해당 테이블은 부모, 자식, 손자까지 계속 기본 키를 전달하는 식별 관계이다. 식별관계에서 자식 테이블은 부모 테이블의 기본 키를 포함해서 복합 키를 구성해야 하므로 `@IdClass`나 `@EmbeddedId`를
+사용해서 식별자를 매핑해야한다.
 
 #### `@IdClass`와 식별 관계
+
 식별관계는 기본 키와 외래 키를 같이 매핑해야한다. 따라서 식별자 매핑인 `@Id`와 연관관계 매핑인 `@ManyToOne`을 같이 매핑한다.
 
 `Child`엔티티의 `parent`필드를 보면 `@Id`로 기본키를 매핑하면서 `@ManyToOne`과 `@JoinColumn`으로 외래 키를 같이 매핑한다.
+
 ```java
 public class Child {
 
@@ -305,18 +311,120 @@ public class Child {
     private String childId;
 ...
 ```
+
 #### `@EmbeddedId`와 식별 관계
+
 `@EmbeddedId`로 식별 관계를 구성시에는 `@MapsId`를 사용해야한다.
 
 `@EmbeddedId`는 식별관계로 사용할 연관관계의 속성에 `@MapsId`를 사용하면 된다.
 
 `Child`엔티티의 필드를 보면 `@IdClass`와 다른 점은 `@Id`대신 `@MapsId`를 사용한 점이다.
-`@MapsId`는 외래키와 매핑한 연관관계를 기본 키에도 매핑하겠다는 뜻이다.
-해당 어노테이션의 속성 값은 `@EmbeddedId`를 사용한 식별자 클래스의 기본 키 필드를 지정하면 된다.
+`@MapsId`는 외래키와 매핑한 연관관계를 기본 키에도 매핑하겠다는 뜻이다. 해당 어노테이션의 속성 값은 `@EmbeddedId`를 사용한 식별자 클래스의 기본 키 필드를 지정하면 된다.
 여기서는 `ChildId`의 `parentId`필드를 선택했다.
+
 ```java
     @MapsId("parentId")
+@ManyToOne
+@JoinColumn(name = "PARENT_ID")
+public Parent parent;
+```
+
+### 비식별 관계로 구현
+
+![img_12.png](img_12.png)
+
+```java
+@Entity
+public class Parent {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "PARENT_ID")
+    private Long id;
+
+    private String name;
+}
+
+@Entity
+public class Child {
+
+    @Id
+    @GeneratedValue
+    @Column(name = "CHILD_ID")
+    private Long id;
+
+    private String name;
+
     @ManyToOne
     @JoinColumn(name = "PARENT_ID")
-    public Parent parent;
+    private Parent parent;
+}
+
+@Entity
+public class GrandChild {
+    @Id
+    @GeneratedValue
+    @Column(name = "GRADCHILD_ID")
+    private Long id;
+    private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "CHILD_ID")
+    private Child child;
+}
 ```
+식별관계의 복합키를 사용한 코드와 비교하면 매핑도 쉽고 코드도 단순하다. 그리고 복합키가 존재하지 않으므로 복합키 클래스를 만들지 않아도 된다.
+
+#### 일대일 식별관계
+![img_13.png](img_13.png)
+
+그림을 보면 일대일 식별 관계는 자식 테이블의 기본 키 값으로 부모 테이블의 기본키 값만 사용한다.
+부모테이블의 곤키가 복합키가 아니면 자식테이블의 기본키는 복합 키로 구성하지 않아도 된다.
+
+```java
+@Entity
+public class BoardDetail {
+
+    @Id
+    private Long boardId;
+
+    @MapsId
+    @OneToOne
+    @JoinColumn(name = "BOARD_ID")
+    private Board board;
+}
+```
+`BoardDetail`처럼 식별자가 단순히 컬럼 하나면 `@MapsId`를 사용하고 속성 값은 비워두면 된다
+`@MapsId`는 `@Id`를 사용해서 식별자가 지정한 `BoardDetail.boardId`와 매핑된다.
+
+#### 식별, 비식별관계읜 장단점
+데이터베이스 설계 관점에서 보면 식별관계보다는 비식별 관계를 선호한다
+- 식별관계는 부모 테이블의 기본키를 자식테이블로 전파하면서 자식테이블의 기본키 컬럼이늘어난다.
+> 부모테이블은 기본 키 컬럼이 하나였지만 자식 테이블은 기본 키 컬럼이 2개, 손자 테이블은 기본 키 컬럼이 3개로 점점 늘어난다.
+> 결국 조인 할때 SQL이 복잡해지고 기본 키 인덱스가 불필요하게 커질수도 있다.
+
+- 식별 관계는 2개이상의 컬럼을 합해서 복합 기본 키를 만들어야 하는 경우가 많다
+- 식별관계를 사용할때 기본키로 비즈니스 의미가 있는 자연키 컬럼을 조합하는 경우가 많다. 반면 비식별 관계는 비즈니스와 전혀 관계없는 대리 키를 주로 사용한다.
+> 비즈니스요구사항은 시간이 지남에 따라 언젠가는 변한다. 식별관계의 자연키 컬럼들이 자식에 손자까지 전파되면 변경하기 힘들다.
+- 식별관계는 부모테이블의 기본키를 자식 테이블의 기본 키로 사용하므로 비식별관계보다 테이블 구조가 유연하지 못하다.
+
+객체관계 매핑의 관점에서 보면 비식별관계를 선호한다
+- 일대일 관계를 제외하고 식별 관계는 2개 이상의 컬럼을 묶은 복합 기본키를 사용한다.
+> JPA에서 복합 기본 키는 별도의 복합키 클래스를 만들어 사용해야한다. 따라서 컬럼이 하나인 기본키를 매핑하는 것보다 많은 노력이 필요하다.
+- 비식별 관계의 기본키는 주로 대리키를 사용하는데 JPA는 `@GenerateValue`처럼 대리키를 생성하기 위한 편리한 방법을 제공한다.
+> 식별키가 가지는 장점
+> - 기본키 인덱스를 활용하기 좋다
+> - 상위테이블 들의 기본키 컬럼을 자식, 손자 테이블들이 가지고 있으므로 특정 상황에 조인 없이 하위 테이블 만으로 검색을 완료할수 있다.
+>
+> 기본키 인덱스를 활용하는 예
+> - 부모의 아이디가 A인 모든 자식조회
+> ```sql
+> SELECT  * FROM CHILD
+> WHERE PARRENT_ID = 'A'
+> ```
+> - 부모 아이디가 A이고 자식 아이디가 B인 자식조회
+> ```sql
+> SELECT * FROM CHILD
+> WHERE PARENT_ID = 'A' AND CHILD_ID = 'B'
+>```
+> 두 경우 모두 `CHILD`테이블의 기본 키 인덱스를 PARENT_ID+ CHILD_ID로 구성하면 별도의 인덱스를 생서할 필요 없이 기본 키 인덱스만 사용해도 된다.

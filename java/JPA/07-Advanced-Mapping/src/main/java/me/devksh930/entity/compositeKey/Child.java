@@ -9,16 +9,17 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Child {
-    @EmbeddedId
-    private ChildId id;
 
-    @MapsId("parentId")
-    @ManyToOne
-    @JoinColumn(name = "PARENT_ID")
-    public Parent parent;
+    @Id
+    @GeneratedValue
+    @Column(name = "CHILD_ID")
+    private Long id;
 
     private String name;
 
+    @ManyToOne
+    @JoinColumn(name = "PARENT_ID")
+    private Parent parent;
 
 //    @ManyToOne
 //    @JoinColumns({

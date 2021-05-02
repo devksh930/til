@@ -10,9 +10,9 @@ import javax.persistence.*;
 @Setter
 public class Parent {
 
-    @Id
+    @Id @GeneratedValue
     @Column(name = "PARENT_ID")
-    private ParentId id;
+    private Long id;
 
     private String name;
 }
