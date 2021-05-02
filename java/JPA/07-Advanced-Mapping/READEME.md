@@ -137,26 +137,32 @@
 
 테이블을 설계할때 식별관계나 비식별 관계 중 하나를 선택해야한다. 최근에는 비식별 관계를 주로 사용하고 꼭 필요한 곳에만 식별관계를 사용하는 추세이다.
 
-#### 복합키: 비식별 관계 매핑
+## 복합키: 비식별 관계 매핑
 
 기본 키를 구성하는 컬럼이 하나면 다음 처럼 단수하게 매핑을 하면된다
 
 ```java
+
 @Entity
 public class Hello {
     @Id
     private String id;
 }
 ```
+
 하지만 둘 이상의 컬럼으로 구성된 복합 기본 키를 JPA에서 식별자 둘 이상을 사용하려면 별도의 식별자 클래스를 만들어야한다.
+
 - JPA는 영속석 컨텍스트에 엔티티를 보관할때 엔티티의 식별자를 키로 사용한다. 그리고 식별자를 구분하기 위해 `equals`와 `hashCode`를 사용해서 동등석 비교를한다.
 - 식별자 필드가 하나일 때는 보통 자바의 기본타입을 사용하므로 문제가 없지만 2개이상이면 식별자 클래스를 만들고 그곳에 `equals`와 `hashCode`를 구현해야 한다.
 - JPA는 복합키를 지원하기위해 `@IdClass`와 `@EmbeddedId` 2가지 방법을 제공한다.
 
-#### @IdClass
+### @IdClass
+
 ![img_10.png](img_10.png)
 `PARENT`테이블을 보면 기본 키를 `PARENT ID1`,`PARENT_ID2`로 묶은 복합 키로 구성했다. 해당봉합키를 매핑하기 위해선 식별자 클래스를 별도로 만들어야한다.
+
 ```java
+
 @Entity
 @IdClass(ParentId.class)
 public class Parent {
@@ -169,8 +175,10 @@ public class Parent {
     private String id2;
 }
 ```
+
 - `PARENT`엔티티에서 기본키 컬럼을 `@Id`로 매핑하였다.
 - `@IdClass`를 이용해 `ParentId`클래스를 식별자 클래스로 지정하였다,
+
 ```java
 public class ParentId implements Serializable {
     private String id1;
@@ -193,12 +201,15 @@ public class ParentId implements Serializable {
 ```
 
 `@IdClass`를 사용할때 식별자는 다음 조건을 만족해야한다.
+
 - 식별자 클래스의 속성명과 엔티티에서 사용하는 식별자의 속성명이 같아야한다.
 - `Serializable`인터페이스를 구현해야한다
 - `equals`,`hashCode`를 구현해야한다.
 - 기본생성자가 있어야한다.
 - 식별자 클래스는 `public`이어야 한다.
+
 ```java
+
 @Entity
 public class Child {
 
@@ -208,11 +219,90 @@ public class Child {
     @ManyToOne
     @JoinColumns({
             @JoinColumn(name = "PARENT_ID1", referencedColumnName = "PARENT_ID1"),
-            @JoinColumn(name = "PARENT_ID2",referencedColumnName = "PARENT_ID2")
+            @JoinColumn(name = "PARENT_ID2", referencedColumnName = "PARENT_ID2")
     })
     private Parent parent;
 }
 ```
+
 - 부모테이블의 기본키 컬럼이 복합 키이므로 자식 테이블의 외래키도 복합 키다.
 - 외래키 매핑시 여러 컬럼을 매핑해야 하므로 `@JoinColumns`어노테이션을 사용하고 각각의 외래키 컬럼을 `@JoinColumn`으로 매핑한다.
 - 해당 예제처럼 `@JoinColumn`의 `name`속성과 `referencedColumnName` 속성의 값이 같으면 `referencedColumnName`은 생략이 가능하다.
+
+### `@EmbeddedId`
+
+`@IdClass`가 데이터베이스에 맞춘 방법이라면 `@EmbeddedId`는 좀 더 객체지향적인 방법이다.
+
+```java
+
+@Embeddable
+public class ParentId implements Serializable {
+    @Column(name = "PARENT_ID1")
+    private String id1;
+    @Column(name = "PARENT_ID2")
+    private String id2;
+//equals, hashcode
+}
+```
+
+- `@IdClass`와 다르게 `@EmbeddedId`를 적용한 식별자 클래스는 식별자 클래스에 기본키를 직접 매핑한다
+- `@Embeddable`어노테이션을 붙여주어야한다
+- `@Serializable` 인터페이스를 구현해야한다.
+- `equals`, `hashCode`를 구현해야 한다.
+- 기본 생성자가 있어야 한다.
+- 식별자 클래스는 `public`이어야 한다.
+
+#### 복합키와 `equals()`,`hashCode()`
+
+복합키는 equals()와 hashCode()를 필수로 구현해야한다.
+
+```java
+        ParentId id1=new ParentId();
+        id1.setId1("myId1");
+        id1.setId2("myId2");
+
+        ParentId id2=new ParentId();
+        id2.setId1("myId1");
+        id2.setId2("myId2");
+
+        System.out.println(id1.equals(id2));
+```
+
+해당 코드를 보면 id1과 id2 인스턴스 둘 다 myId1, myId2라는 같은 값을 가지고 있지만 인스턴스는 다르다. equals()를 적절히 오버라이딩 했다면 마지막 출력값은 참이다.
+
+영속성 컨텍스트는 엔티티의 식별자를 키로 사용해서 엔티티를 관리한다. 그리고 식별자를 비교할때 `equals()`,`hashCode()`를 사용한다. 따라서 식별자 객체의 동등성이 지켜지지 않으면 예상과는 다른
+엔티티가 조회되거나 엔티티를 찾을수 없는등 영속성컨텍스트가 엔티티를 관리하는데 있어서 심각한 문제가 발생할수도있다.
+
+#### `@IdClass`, `@EmbeddedId`
+`@IdClass`와 `@EmbeddedId`는 각각 장단점이 있다.
+`@EmbeddedId`가 `@IdClass`와 비교해서 더 객체지향적이고 중복도 없어서 좋아보이긴 하지만 특정 상황에 JPQL이 조금 더 길어질 수 있다.
+```java
+em.createQuesry("select p.id.id1, p.id.id2 from Parent p"); //@EmneddedId
+em.createQuesry("select p.id1, p.id2 from Parent p"); //@IdClass
+```
+> 복합키에는 `@GenerateValue`를 사용할 수 없다. 복합 키를 구성하는 여러 컬럼중 하나에도 사용할 수 없다.
+
+### 복합 키 식별관계 매핑
+![img_11.png](img_11.png)
+
+해당 테이블은 부모, 자식, 손자까지 계속 기본 키를 전달하는 식별 관계이다.
+식별관계에서 자식 테이블은 부모 테이블의 기본 키를 포함해서 복합 키를 구성해야 하므로 `@IdClass`나 `@EmbeddedId`를 사용해서 식별자를 매핑해야한다.
+
+#### `@IdClass`와 식별 관계
+식별관계는 기본 키와 외래 키를 같이 매핑해야한다. 따라서 식별자 매핑인 `@Id`와 연관관계 매핑인 `@ManyToOne`을 같이 매핑한다.
+
+`Child`엔티티의 `parent`필드를 보면 `@Id`로 기본키를 매핑하면서 `@ManyToOne`과 `@JoinColumn`으로 외래 키를 같이 매핑한다.
+```java
+public class Child {
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "PARENT_ID")
+    public Parent parent;
+
+    @Id
+    @Column(name = "CHILD_ID")
+    private String childId;
+...
+```
+#### `@EmbeddedId`와 식별 관계

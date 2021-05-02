@@ -17,9 +17,9 @@ public class JpaMain {
 
         try {
             tx.begin();
-//            CompositeKeySave(em);
+//            CompositeKeySaveEmbeddedId(em);
             tx.commit();
-            CompositeKeyFind(em);
+//            CompositeKeyFindEmbeddedId(em);
         } catch (Exception e) {
             tx.rollback();
         } finally {
@@ -27,17 +27,45 @@ public class JpaMain {
         }
         emf.close();
     }
-    public static void CompositeKeySave(EntityManager em){//복합키를 사용하는 엔티티 저장
+
+    //    public static void CompositeKeySaveIdClass(EntityManager em){//복합키를 사용하는 엔티티 저장 - @IdClass이용
+//        Parent parent = new Parent();
+//        parent.setId1("myId1");
+//        parent.setId2("myId2");
+//        parent.setName("parentName");
+//        em.persist(parent);
+//    }
+//
+//    public static void CompositeKeyFind(EntityManager em){ //복합키를 이용한 조회 - @IdClass이용
+//        ParentId parentId = new ParentId("myId1", "myId2");
+//        Parent parent = em.find(Parent.class, parentId);
+//        System.out.println(parent.getName());
+//    }
+    public static void CompositeKeySaveEmbeddedId(EntityManager em) { //복합키를 사용하는 엔티티 저장 -@EmbeddedId 사용
         Parent parent = new Parent();
-        parent.setId1("myId1");
-        parent.setId2("myId2");
+        ParentId parentId = new ParentId("myId1", "myId2");
+        parent.setId(parentId);
         parent.setName("parentName");
+
         em.persist(parent);
+
     }
 
-    public static void CompositeKeyFind(EntityManager em){ //복합키를 이용한 조회
+    public static void CompositeKeyFindEmbeddedId(EntityManager em) { // 복합키를 이용한 조회 -@EmbeddedId 사용
         ParentId parentId = new ParentId("myId1", "myId2");
         Parent parent = em.find(Parent.class, parentId);
         System.out.println(parent.getName());
+    }
+
+    public static void ParentId_equals_test() {
+        ParentId id1 = new ParentId();
+        id1.setId1("myId1");
+        id1.setId2("myId2");
+
+        ParentId id2 = new ParentId();
+        id2.setId1("myId1");
+        id2.setId2("myId2");
+
+        System.out.println(id1.equals(id2));
     }
 }
