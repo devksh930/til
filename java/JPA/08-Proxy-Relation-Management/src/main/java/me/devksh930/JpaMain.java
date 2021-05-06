@@ -3,10 +3,7 @@ package me.devksh930;
 import me.devksh930.entity.Member;
 import me.devksh930.entity.Team;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.util.Arrays;
 
 public class JpaMain {
@@ -18,9 +15,9 @@ public class JpaMain {
 
         try {
             tx.begin();
-            teamSave(em);
+//            teamSave(em);
             tx.commit();
-            printUser(em);
+            ProxyTest(em);
         } catch (Exception e) {
             tx.rollback();
         } finally {
@@ -60,5 +57,10 @@ public class JpaMain {
     public static void printUser(EntityManager em) {
         Member member = em.find(Member.class, "회원1");
         System.out.println("회원 이름: " + member.getUsername());
+    }
+
+    public static void ProxyTest(EntityManager em) {
+        Member member = em.find(Member.class, "회원1");
+        Team team = member.getTeam();
     }
 }
