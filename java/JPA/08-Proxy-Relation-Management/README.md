@@ -84,3 +84,56 @@ class MemberProxt extends Member {
 3. 영속성 컨텍스트는 DB를 조회해 실제 엔티티 객체를 생성
 4. 프록시 객체는 생성된 실제 엔티티 객체의 참조를 Member target 멤버 변수에 보관한다.
 5. 프록시 객체는 실제 엔티티 객체의 `getName()`을 호출해서 결과를 반환한다.
+
+#### 프록시의 특징
+프록시의 특징은 다음과 같다
+- 프록시 객체는 처음 사용할 때 한번만 초기화된다.
+- 프록시 객체를 초기화한다고 프록시 객체가 실제 엔티티로 바뀌는것이 아니라 프록시를 통해 실제 엔티티에 접근이 가능하다.
+- 프록시객체는 원본 엔티티를 상속받은 객체이므로 타입체크시 주의가 필요하다.
+- 영속성 컨텍스트에 찾는 엔티티가 이미 있으면 DB를 조회할 필요가 없다. `em.getReference()`를 호출해도 프록시가 아닌 실제 엔티티를 반환한다.
+- 초기화는 영속성 컨텍스트의 도움을 받아야만 가능하다. 준영속 상태의 프록시를 초기화하면 문제가 발생한다.
+
+#### 준영속 상태와 초기화
+```java
+//MemberProxy 반환
+Member member = em.getReference(Member.class, "id1");
+transaction.commit();
+em.close(); //영속 컨텍스트 종료
+
+member.getName(); //준영속 상태 초기화 시도
+```
+해당 코드를 보게 되면 `em.close()`메소드로 영속성컨텍스트를 종료해서 `member`는 준영속 상태이다.
+`member.getName()`을 하게 되면 프록시를 초기화해야 하지만 영속컨텍스트가 존재하지 않으므로 실제 엔티티 조회가 불가능해
+예외가 발생한다.
+
+## 프록시와 식별자
+엔티티를 프록시로 조회할 경우 식별자(PK) 값을 파라미터로 전달하는데 프록시 객체는 이값을 보관한다.
+```java
+Team team = em.getReference(Team.class,  "team1"); //식별자 보관
+team.getId(); // 초기화 되지 않음
+```
+해당 모드를 보면 프록시 객체는 식별자 값을 가지고 있으므로 식별자 값을 조회하는 `team.getId()`를 호출해도 프록시를 초기화 하지 않는다.
+(단 엔티티 접근방식을 프로퍼티로 설정한 경우에만 초기화하지 않는다) 엔티티 접근 방식을 필드로 설정하게 되면 해당 메서드가 JPA는 id만 조회하는 메소드인지
+다른 필드까지 활용해서 어떤일을 하는 메서드인지 알지 못해서 프록시 객체를 초기화 한다.
+이를 이용해 연관관계 설정시 유용하게 사용가능하다.
+```java
+Member member = em.find(Member.class,"member1");
+Team team = em.getReference(Team.class, "team1"); //SQL 실행안함
+member.setTeam(team);
+```
+연관관계 설정시 식별자값만 이용하므로 프록시를 이요하게 되면 데이터베이스 접근 횟수를 줄일수 있다.
+## 프록시 확인
+JPA가 제공하는 `PersistenceUtil.isLoaded(Object entity)` 메서드 이용시 프록시 인스턴스의 초기화 여부 확인이 가능하다.
+초기화 되지 않은 프록시 인스턴스는 `false`를 반환한다.
+```java
+boolean isLoaded = em.getEntityManagerFactory()
+                     .getPersistenceUnitUtil().isLoaded(entity);
+```
+조회한 엔티티가 진짜 엔티티인지 프록시로 조회한 것인지 확인하려면 클래스명을 직접 출력해보면 된다.
+```java
+System.out.println("memberProxy = " + member.getClass().getName());
+```
+```
+결과 : meberProxtt = jpabook.domain.Member_$$_javassist_0
+```
+결과를 보면 ..javassist..라 되어 있는데 이것을 보고 프록시인 것을 확인할수 있다.(프록시를 생성하는 라이브러리에 따라 출력결과는 달라진다)
