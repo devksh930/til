@@ -174,8 +174,10 @@ System.out.println("memberProxy = "+member.getClass().getName());
         Team team=member.getTeam();
         }
 ```
+
 위의 예제를 실행시 회원과 팀을 즉시 로딩으로 설정했기 때문에 `member`를 조회하는 순간 `team`도 같이 조회한다. 이때 회원과 팀 두 테이블 모두 조회 해야 하므로 쿼르릴 2번 실행한것 같지만
 대부분의 `JPA구현체는 즉시로딩을 최적화하기 위해 가능하면 조인쿼리를 이용힌다.`
+
 ```sql
     select member0_.username as username1_0_0_,
            member0_.TEAM_ID  as TEAM_ID2_0_0_,
@@ -185,14 +187,194 @@ System.out.println("memberProxy = "+member.getClass().getName());
          Team team1_ on member0_.TEAM_ID = team1_.name
     where member0_.username = ?
 ```
+
 SQL을 살펴보면 회원과 팀을 조인을 통해 쿼리 한번으로 조회한것을 알수있다.
 
 #### 지연 로딩
+
 즉시로딩을 이용하려면 `@ManyToOne`의 `fetch`속성을 `LAZY`로 지정한다.
 
-즉시로딩때 사용했던 코드를 다시 실행해보면 `em.find(Member.class,"회원1");` 를 호출하게 되면 회원만 조회하고 팀은 조회하지 않는다. 같이 조회한 회원의 `team`메머 변수에 프록시 객체를 넣어둔다
+즉시로딩때 사용했던 코드를 다시 실행해보면 `em.find(Member.class,"회원1");` 를 호출하게 되면 회원만 조회하고 팀은 조회하지 않는다. 같이 조회한 회원의 `team`메머 변수에 프록시 객체를
+넣어둔다
+
 ```java
-Team team = member.getTeam(); // 프록시 객체
+Team team=member.getTeam(); // 프록시 객체
 ```
+
 `반환된 팀 객체는 프록시 객체다. 이프록시 객체는 실제 사용될때 까지 데이터의 로딩을 미룬다. 그래서 이것을 지연로딩이라고 부른다`
 
+## 지연 로딩 활용
+
+사내 주문 관리 시스템
+
+![img_2.png](img_2.png)은
+
+모델 분석
+
+- 회원(Member)은 팀(Team)하나에만 소속할 수 있다. (N:1)
+- 회원(Member)은 여러 주문내역(Order)을 가진다. (N:1)
+- 주문내역(Order)은 상품정보(Product)를 가진다. (N:1)
+
+애플리케이션 로직
+
+- Member와 연관된 Team은 자주 함께 사용되었다 Member와 Team은 즉시로딩으로 설정
+- Member와 연관된 Order은 가끔 사용됨. Member와 Order는 지연로딩으로 설정
+- Order와 연관된 Product는 함께 자주 사용됨 Order와 Product는 즉시로딩
+
+회원과 팀은 즉시로딩으로 설정했다. 회원을 조회할때 연관된 Team객체도 함께 조회힌다.
+
+```sql
+    select member0_.MEMBER_ID as MEMBER_I1_0_0_,
+           member0_.TEAM_ID   as TEAM_ID3_0_0_,
+           member0_.username  as username2_0_0_,
+           team1_.TEAM_ID     as TEAM_ID1_3_1_,
+           team1_.name        as name2_3_1_
+    from Member member0_
+             left outer join
+         Team team1_ on member0_.TEAM_ID = team1_.TEAM_ID
+    where member0_.MEMBER_ID = ?
+```
+
+- 회원과 팀을 즉시로딩으로 설정했으므로 조인 쿼리를 만들어 회원과 팀을 한꺼번에 조회한다.
+- 반면 회원과 주문내역은 지연로딩으로 설정을 했으므로 프록시로 조회해서 SQL에 나타나지 않는다.
+
+#### 프록시와 컬렉션 래퍼
+
+지연 로딩으로 설정하면 실제 엔티티 대신 프록시 객체를 사용한다. 프록시 객체는 실제 자신이 사용될 때까지 데이터베이스를 조회하지 않는다.
+
+```java
+    List<OrderDetails> orders=member.getOrders();
+        System.out.println("orders = "+orders.getClass().getName());
+// 결과 : orders = org.hibernate.collection.internal.PersistentBag
+```
+
+하이버네이트는 엔티티를 영속상태로 만들때 엔티티에 컬렉션이 있으면 컬렉션을 추적하고 관리할 목적으로 원본 컬렉션을 하이버네이트가 제공하는 내장 컬렉션으로 변경한다. 이를 컬렉션 래퍼라고 한다.
+
+`엔티티를 지연로딩하면 프록시 객체를 사용해서 지연로딩을 수행하지만 주문내역 같은 컬렉션은 컬렉션 래퍼가 지연로딩을 처리해준다.`
+
+#### JPA 기본 페치 전략
+
+fetch 속성의 기본 설정값은 다음과 같다
+
+- @ManyToOne, @ManyToOne : 즉시로딩
+- @OneToMany, @ManyToMany : 지연로딩
+
+JPA의 기본 페치 전략은 연관된 엔티티가 하나면 즉시로딩을, 컬렉션일시 지연로딩을 사용한다.
+
+컬렉션을 로딩하는 것은 비용이 많이든다.
+
+> `추천하는 방법은 모든 연관관계에 지연로딩을 사용하는 것이다.`
+>
+> 애플리케이션 개발이 어느 정도 완료단계에 왔을 때 실제 사용하는 상황을 보고 꼭 필요한곳에만 즉시로딩을 사용하도록 최적화 한다.
+
+#### 컬렉션 즉시 로딩 사용시 주의점
+
+컬렉션에 `FetchType.EAGER`를 사용할 경우에 주의할 점은 다음과 같다
+
+- 컬렉션을 하나 이상 즉시 로딩하는것은 권장하지 않는다.
+
+> 컬렉션을 조인 한다는것은 DB테이블로 보면 일대다 조인이다. 일대다 조인은 결과 데이터가 다 쪽에 있는 수만큼 증가하게된다. 연관관계가 많으면 많을수록 로딩해야 하는 데이터가 많아지므로 2개이상의 컬렉션은 즉시로딩으로 설정하는 것은 권장하지 않는다
+
+- 컬렉션 즉시 로딩은 항상 외부조인(OUTER JOIN)을 사용한다.
+
+`FetchType.EAGER`설정과 조인 전략
+
+- @ManyToOne, @OneToOne
+    - (optional = false) : 내부조인
+    - (opthinal = true) : 외부조인
+
+
+- @OneToMany, @ManyToMany
+    - (optional = false) : 외부조인
+    - (opthinal = true) : 내부조인
+
+#### 영속성 전이 : CASCADE
+
+```java
+    private static void saveNoCascade(EntityManager em){
+        // 부모저장
+        Parent parent=new Parent();
+        em.persist(parent);
+
+        //1번자식 저장
+        Child child1=new Child();
+        child1.setParent(parent);
+        parent.getChildren().add(child1);
+        em.persist(child1);
+
+        //2번자식 저장
+        Child child2=new Child();
+        child2.setParent(parent);
+        parent.getChildren().add(child2);
+        em.persist(child2);
+        }
+```
+
+`JPA에서 엔티티를 저장할 때 연관된 모든 엔티티는 영속 상태여야한다.`
+
+따라서 기존의 코드는 부모 엔티를 영속상태로 만들고 자식 엔티티도 각각 영속상태로 만들어야 한다. 이때 영속성 전이를 이용하면 부모만 영속상태로 만들면 연관된 자식까지 한번에 영속 상태로 만들수 있다.
+
+#### 영속성 전이: 저장
+
+```java
+
+@Entity
+public class Parent {
+    ...
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.PERSIST)
+    private List<Child> children = new ArrayList<Child>();
+    ...
+}
+```
+
+부모 영속시 연관된 자식들도 영속화가 가능하도록 `cascade = CascadeType.PERSIST` 해당 옵션을 설정했다.
+
+이렇게 하면 간편하게 부모와 자식엔티티를 한번에 영속화 시킬수 있다.
+
+영속성 전이는 연관관계를 매핑하는 것과는 아무 관련이 없으며 단지 엔티를 영속화 할때 연관된 엔티티도 같이 영속화 하는 편리함을 제공한다.
+
+#### 영속성 전이: 삭제
+
+저장한 부모와 자식 엔티티를 모두 제거 하려면 각각의 엔티티를 하나씩 전부 제거해야한다. 하지만 영속성전이는 엔티티를 삭제할 때도 사용할수 있다.
+
+`CascadeType.REMOVE`로 설정하면 부모 엔티티만 삭제하면 연관된 모든 엔티티도 함께 삭제 된다.
+
+```java
+Parent parent=em.find(Parent.class,1L);
+        em.remove(parent);
+```
+
+하지만 `CascadeType.REMOVE` 설정하지 않고 해당 코드를 실행하게 되면 외래키 제약 조건으로 인해 DB외래키 무결성 예외가 발생한다.
+
+#### CASCADE 종류
+
+![img_3.png](img_3.png)
+
+- ALL: 모두적용
+- PERSIST : 영속
+- MERGE : 병합
+- REMOVE : 삭제
+- REFRESH : REFRESH
+- DETACH : DETACH
+
+그리고 추가적으로 여러속성을 같이 사용이 가능하다
+`cacade = {CascadeType.PERSIST,CascadeType.REMOVE}`
+> 참고로 CascadeType.PERSIST, CascadeType.REMOVE 는 em.persist(),em.remove()를 실행할 때 바로 전이가 발생하지 않고 플러시를 호출할 때 전이가 발생한다
+
+#### 고아객체
+
+JPA는 부모 엔티티와 연관관계가 끊어진 자식 엔티티를 자동으로 삭제하는 기능을 제공한다.
+
+이것을 고아 객체 (ORPHAN) 제거 라 한다.
+
+```java
+    public static void oprhanRemove(EntityManager em){
+
+        Parent parent=em.find(Parent.class,1L);
+        parent.getChildren().remove(0);
+        }
+```
+해당 코드를 실행하면 컬렉션의 첫번째 자식을 삭제하면 데이터베이스에도 반영된다.
+>하지만 반영이 되지 않았다.
+> 하이버네이트의 버전 변경이후 `CascadeType`과 `orphanRemoval = true`를 같이 사용하여아 한다.
+> 같이 사용하면 컬렉션만 제거하면 데이터베이스에 반영이 되는걸 볼수가 있다.
