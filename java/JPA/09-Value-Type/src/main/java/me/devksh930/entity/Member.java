@@ -21,4 +21,6 @@ public class Member {
     //집주소
     @Embedded
     Address address;
+    @Embedded
+    PhoneNumber phoneNumber;
 }

@@ -2,11 +2,11 @@ package me.devksh930.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
 @Embeddable
 public class Address {
-    @Column(name = "city")
     public String city;
     private String street;
-    private String zipcode;
+    @Embedded Zipcode zipcode;
 }
