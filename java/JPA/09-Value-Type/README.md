@@ -124,6 +124,7 @@ public class Period {
 임베디드 타입은 값 타이블 포함하거나 엔티티를 참조할 수 있다.
 
 ```java
+
 @Entity
 @Getter
 @Setter
@@ -143,22 +144,67 @@ public class Address {
     @Embedded
     Zipcode zipcode;
 }
+
 @Embeddable
 public class Zipcode {
-  String zip;
-  String plusFour;
+    String zip;
+    String plusFour;
 }
+
 @Embeddable
 public class PhoneNumber {
-  String areaCode;
-  String localNumber;
-  @ManyToOne PhoneServiceProvider provider;
+    String areaCode;
+    String localNumber;
+    @ManyToOne
+    PhoneServiceProvider provider;
 }
+
 @Entity
 public class PhoneServiceProvider {
-  @Id
-  String name;
+    @Id
+    String name;
 }
 ```
+
 - 값 타입인 `Address`가 값 타입인 `Zipcode`를 포함한다
 - 값 타입인 `PhoneNumber`가 엔팉티 타입인 `PhoneServiceProvider`를 참조한다
+
+### `@AttributeOverride` 속성 재정의
+
+- 임베디드 타입에 정의한 매핑정보를 재정의하려면 엔티티에 `@AttributeOverride`를 사용하면 된다.
+- `@AttributeOverrides`를 이용하면 메핑할 컬럼명이 중복되는걸 재정의할수 있다.
+
+```java
+public class Member {
+    ...
+    @Embedded
+    Address homeAddress;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "city", column = @Column(name = "COMPANY_CITY")),
+            @AttributeOverride(name = "street", column = @Column(name = "COMPANY_STREET")),
+            @AttributeOverride(name = "city", column = @Column(name = "COMPANY_ZIPCODE"))
+
+    })
+    Address companyAddress;
+    
+...
+}
+```
+
+- `@AttriuteOverride`를 사용하면 어노테이션을 너무많이 해서 엔티티 코드가 지저분해 진다.
+
+### 임베디드 타입과 null
+임베디드 타입이 `null`이면 매핑한 컬럼 값은 모두 `null`이다.
+```java
+member.setAdress(null);
+em.persist(member);
+```
+- 회원 테이블 주소와 관련된 city,street,zipcode컬럼의 값은 모두 null이 된다. 
+
+## 값 타입과 불변 객체
+값타입은 복잡한 객체 세상을 조금이라도 단순화 시키려고 만든 개념이다. 값타입은 단순하고 안전하게 다룰수 있어야한다.
+
+### 값 타입 공유 참조
+임베디드 타입은 값 타입을 여러 엔티티에서 공유하면 위험하다.

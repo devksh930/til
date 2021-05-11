@@ -1,4 +1,4 @@
-package com.sp.fc.web.student;
+package com.sp.fc.student;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
