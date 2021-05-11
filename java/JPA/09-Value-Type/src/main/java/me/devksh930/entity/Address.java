@@ -1,12 +1,20 @@
 package me.devksh930.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 
 @Embeddable
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Address {
-    public String city;
+    private String city;
     private String street;
-    @Embedded Zipcode zipcode;
+    @Embedded
+    Zipcode zipcode;
 }

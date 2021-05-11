@@ -208,3 +208,56 @@ em.persist(member);
 
 ### 값 타입 공유 참조
 임베디드 타입은 값 타입을 여러 엔티티에서 공유하면 위험하다.
+```java
+member1.setHomeAddress(new Address("OldCity"));
+Address address = member1.getHomeAddress();
+
+address.setCity("NewCity");
+member2.setHomeAddress(address);
+```
+
+회원2에 새로운 주소를 할당하려 회원1의 주소를 그대로 참조해서 사용하면 회원1의 주소도 "NewCity" 로 변경된다.
+
+### 값 타입 복사
+값 타입의 실제 인스턴스인 값을 공유하는 것은 위험하다.
+대신에 값(인스턴스)을 복사해서 사용해야 한다.
+```java
+member1.setHomeAddress(new Address("OldCity"));
+Address address = member1.getHomeAddress();
+
+Address newAddrss = address.clone();
+
+address.setCity("NewCity");
+member2.setHomeAddress(address);
+```
+- 이처럼 항상 값을 복사해서 사용하면 공유 참조로 인해 발생하는 부작용을 피할수 있다.
+- 객체를 대입할 때마다 인스턴스를 복하해서 대입하면 공유 참조를 피할수 있다.
+- 부작용을 막는 방법은 `Address`객체의 `setCity()` 같은 수정자 메소드를 제거 하면 공유 참조를 해도 값을 변경하지 못하므로 부작용의 발생을 막을수 있다.
+
+### 불변 객체
+- 값 타입은 부작용 걱정 없이 사용할 수 있어야 한다
+- 값타입은 될 수 있으면 불변객체(`immutable Object`)로 설계 해야한다.
+- 불변객체를 구현하는 가장 간단한 방법
+  - 생성자로만 값을 설정한다.
+  - 수정자(setter)를 만들지 않는다
+  
+### 값 타입 비교
+```java
+int a = 10;
+int b = 10;
+
+Address a = new Address("서울시","종로구","1번지");
+Address b = new Address("서울시","종로구","1번지");
+```
+- int a의 숫자 int b의 숫자 10은 같다고 표현한다.
+- Address a 와 Address b는 같다고 표현한다.
+
+객체 비교
+- 동일성(Identity) 비교 : 인스턴스의 참조 값을 비교 , == 사용
+- 동등성(Equivalence) 비교 : 인스턴스의 값을 비교 , equals() 사용
+>
+> Address 값 타입을 a == b로 동일성 비교시 둘은 서로 다른 인스턴스이므로 결과는 거짓이다.
+>
+>값타입은 인스턴스가 달라도 값이 같으면 같은것으로 보아야한다.
+>
+> 값타입 비교시 `a.equals(b)`를 사용해 동등성 비교를 해야한다.
