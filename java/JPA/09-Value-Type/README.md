@@ -261,3 +261,62 @@ Address b = new Address("서울시","종로구","1번지");
 >값타입은 인스턴스가 달라도 값이 같으면 같은것으로 보아야한다.
 >
 > 값타입 비교시 `a.equals(b)`를 사용해 동등성 비교를 해야한다.
+
+### 값 타입 컬렉션
+값 타입을 하나 이상 저장하려면 컬렉션에 보관하고 `@ElementCollection`,`@CollectionTable` 어노테이션을 사용하면된다.
+```java
+public class Member {
+ ...
+  @ElementCollection
+  @CollectionTable(name = "FAVORITE_FOODS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+  @Column(name = "FOOD_NAME")
+  private Set<String> favoriteFoods = new HashSet<String>();
+
+  @ElementCollection
+  @CollectionTable(name = "ADDRESS", joinColumns = @JoinColumn(name = "MEMBER_ID"))
+  @Column(name = "ADDRESS_HISTORY")
+  private List<Address> addressHistory = new ArrayList<Address>();
+}
+```
+- Member 엔티티에서 `favoriteFoods`와 `addressHistroy`는 컬렉션 타입이다.
+- RDB에서 테이블의 컬럼은 `Collection`을 가질수 없다.
+- 별도의 테이블로 메핑을 하여야한다.
+- 값 타입 컬렉션도 조회할 때 페치 전략을 선택할 수 있다.(`LAZY`가 기본)
+
+#### 값 타입 컬렉션 사용
+```java
+    public static void collectionValueSave(EntityManager em) {
+        Member member = new Member();
+
+        //임베디드 값타입
+        member.setHomeAddress(new Address("부산","북구","12345"));
+
+        //기본값 타입 컬렉션
+        member.getFavoriteFoods().add("짬뽕");
+        member.getFavoriteFoods().add("짜장");
+        member.getFavoriteFoods().add("탕수육");
+
+        //임베디드 값 타입 컬렋녀
+        member.getAddressHistory().add(new Address("부산", "해운대구", "612768"));
+        member.getAddressHistory().add(new Address("부산", "사상구", "612768"));
+
+        em.persist(member);
+    }
+```
+- `meber`엔티티만 마지막에 영속화를 했다. JPA는 `memeber`엔티티의 값 타입도 함께 저장한다 실행되는 `INSERT SQL`
+  - `meber` : `INSERT SQL` 1번
+  - `member.homeAddress` : 컬렉션이 아니라 임베디드 값타입 이므로 회원테이블에 저장하는 SQL에 포함
+  - `member.favoriteFoods` : `INSERT SQL` 3번
+  - `member.addressHistroy` : `INSERT SQL` 2번
+  
+총 6번의 `INSERT SQL`을 실행한다
+
+### 값 타입 컬렉션 제약사항
+- 일대다 관계를 위한 엔티티를 만들고, 여기에서 값 타입을 사용
+- 영속성 전이(Cascade) + 고아객체제거를 사용해서 값 타입 컬렉션처럼사용!
+- 실무에서는 상황에 따라 값 타입 컬렉션 대신에 일대다 관계를 고려
+> - 참고 
+> 
+>값 타입 컬렉션을 변경했을때 JPA 구현체들은 테이블의 기본 키를 식별해서 변경된 내용만을 반영하려고 노력한다.
+>하지만 사용하는 컬렉션이나 여러 조건에 따라 기본 키를 식별할 수도 있고 식별하지 못할 수도 있다.
+>따라서 값 타입 컬렉션을 사용할 때는 모두 삭제하고 다시 저장하는 최악의 시나리오를 사용하며 사용해야함

@@ -15,6 +15,5 @@ import javax.persistence.Embedded;
 public class Address {
     private String city;
     private String street;
-    @Embedded
-    Zipcode zipcode;
+    private String zipcode;
 }
