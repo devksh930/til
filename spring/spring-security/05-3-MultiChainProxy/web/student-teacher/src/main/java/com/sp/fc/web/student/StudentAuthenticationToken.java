@@ -1,4 +1,4 @@
-package com.sp.fc.student;
+package com.sp.fc.web.student;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

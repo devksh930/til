@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.sp.fc.web.MultiChainProxyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-13T20:52:48" hostname="devksh930ui-MacBookPro.local" time="0.546">
+  <properties/>
+  <testcase name="1. kim:1 로 로그인 학생리스트 받기" classname="com.sp.fc.web.MultiChainProxyTest" time="0.546"/>
+  <system-out><![CDATA[05:52:45.672 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+05:52:45.684 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+05:52:45.713 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.sp.fc.web.MultiChainProxyTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+05:52:45.723 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.sp.fc.web.MultiChainProxyTest], using SpringBootContextLoader
+05:52:45.726 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sp.fc.web.MultiChainProxyTest]: class path resource [com/sp/fc/web/MultiChainProxyTest-context.xml] does not exist
+05:52:45.727 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.sp.fc.web.MultiChainProxyTest]: class path resource [com/sp/fc/web/MultiChainProxyTestContext.groovy] does not exist
+05:52:45.727 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.sp.fc.web.MultiChainProxyTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+05:52:45.728 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.sp.fc.web.MultiChainProxyTest]: MultiChainProxyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+05:52:45.765 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.sp.fc.web.MultiChainProxyTest]
+05:52:45.816 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/devksh930/dev/til/spring/spring-security/05-3-MultiChainProxy/server/login-multi-chain/build/classes/java/main/com/sp/fc/web/MultiChainProxyApplication.class]
+05:52:45.817 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.sp.fc.web.MultiChainProxyApplication for test class com.sp.fc.web.MultiChainProxyTest
+05:52:45.896 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.sp.fc.web.MultiChainProxyTest]: using defaults.
+05:52:45.897 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+05:52:45.908 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+05:52:45.908 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+05:52:45.908 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@48b82bda, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6cf7de49, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@11f84349, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@171d87de, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1e72981c, org.springframework.test.context.event.EventPublishingTestExecutionListener@4c25180d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1f94e8cb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@644caf90, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6ef4697d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@af5f1de, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@321f82fb, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@332e8b07]
+05:52:45.911 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@576e83a6 testClass = MultiChainProxyTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3b34151a testClass = MultiChainProxyTest, locations = '{}', classes = '{class com.sp.fc.web.MultiChainProxyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7f0fd779, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@14d61c3a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2aefd79, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3dd687a8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@24fbcbcb, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@12124312], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+05:52:46.111 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@576e83a6 testClass = MultiChainProxyTest, testInstance = com.sp.fc.web.MultiChainProxyTest@52668213, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@3b34151a testClass = MultiChainProxyTest, locations = '{}', classes = '{class com.sp.fc.web.MultiChainProxyApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@7f0fd779, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@14d61c3a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2aefd79, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3dd687a8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@24fbcbcb, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@12124312], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]]].
+05:52:46.127 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.4.1)
+
+2021-05-14 05:52:46.530  INFO 8692 --- [    Test worker] com.sp.fc.web.MultiChainProxyTest        : Starting MultiChainProxyTest using Java 11.0.10 on devksh930ui-MacBookPro.local with PID 8692 (started by devksh930 in /Users/devksh930/dev/til/spring/spring-security/05-3-MultiChainProxy/server/login-multi-chain)
+2021-05-14 05:52:46.532  INFO 8692 --- [    Test worker] com.sp.fc.web.MultiChainProxyTest        : No active profile set, falling back to default profiles: default
+2021-05-14 05:52:47.632  INFO 8692 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2021-05-14 05:52:47.642  INFO 8692 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-05-14 05:52:47.643  INFO 8692 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-05-14 05:52:47.718  INFO 8692 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-05-14 05:52:47.719  INFO 8692 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1000 ms
+2021-05-14 05:52:48.046  INFO 8692 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure org.springframework.boot.autoconfigure.security.servlet.StaticResourceRequest$StaticResourceRequestMatcher@1a66a53b with []
+2021-05-14 05:52:48.137  INFO 8692 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure Ant [pattern='/api/**'] with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@666396bb, org.springframework.security.web.context.SecurityContextPersistenceFilter@291f0774, org.springframework.security.web.header.HeaderWriterFilter@2926bfd4, org.springframework.security.web.authentication.logout.LogoutFilter@60940649, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@48fb13ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1580b976, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@213704de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@606aadbb, org.springframework.security.web.session.SessionManagementFilter@722b6e5e, org.springframework.security.web.access.ExceptionTranslationFilter@37e4556e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2b7801dc]
+2021-05-14 05:52:48.160  INFO 8692 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79d630c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@2e047941, org.springframework.security.web.header.HeaderWriterFilter@1b8a7eea, org.springframework.security.web.csrf.CsrfFilter@140b5f49, org.springframework.security.web.authentication.logout.LogoutFilter@1e8e0734, com.sp.fc.web.config.CustomLoginFilter@6ad4baad, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@540d5645, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@57584b81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1fed12ae, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c7416da, org.springframework.security.web.session.SessionManagementFilter@2d1dfa9, org.springframework.security.web.access.ExceptionTranslationFilter@55358212, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c9d42fc]
+2021-05-14 05:52:48.164  WARN 8692 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : 
+
+********************************************************************
+**********        Security debugging is enabled.       *************
+**********    This may include sensitive information.  *************
+**********      Do not use in a production system!     *************
+********************************************************************
+
+
+2021-05-14 05:52:48.405  INFO 8692 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-05-14 05:52:48.536  INFO 8692 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-05-14 05:52:48.807  INFO 8692 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 56341 (http) with context path ''
+2021-05-14 05:52:48.819  INFO 8692 --- [    Test worker] com.sp.fc.web.MultiChainProxyTest        : Started MultiChainProxyTest in 2.688 seconds (JVM running for 3.808)
+2021-05-14 05:52:49.238  INFO 8692 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-14 05:52:49.238  INFO 8692 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-05-14 05:52:49.239  INFO 8692 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-05-14 05:52:49.246  INFO 8692 --- [o-auto-1-exec-1] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/api/teacher/students':
+
+org.apache.catalina.connector.RequestFacade@5ab09363
+
+servletPath:/api/teacher/students
+pathInfo:null
+headers: 
+authorization: Basic a2ltOjE=
+accept: application/json, application/*+json
+user-agent: Java/11.0.10
+host: localhost:56341
+connection: keep-alive
+
+
+Security filter chain: [
+  WebAsyncManagerIntegrationFilter
+  SecurityContextPersistenceFilter
+  HeaderWriterFilter
+  LogoutFilter
+  BasicAuthenticationFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  AnonymousAuthenticationFilter
+  SessionManagementFilter
+  ExceptionTranslationFilter
+  FilterSecurityInterceptor
+]
+
+
+************************************************************
+
+
+2021-05-14 05:52:49.268  INFO 8692 --- [o-auto-1-exec-1] Spring Security Debugger                 : 
+
+************************************************************
+
+New HTTP session created: 83F34674030B830954F05337187CE4A6
+
+Call stack: 
+
+	at org.springframework.security.web.debug.Logger.info(Logger.java:46)
+	at org.springframework.security.web.debug.DebugFilter$DebugRequestWrapper.getSession(DebugFilter.java:167)
+	at org.springframework.security.web.debug.DebugFilter$DebugRequestWrapper.getSession(DebugFilter.java:177)
+	at javax.servlet.http.HttpServletRequestWrapper.getSession(HttpServletRequestWrapper.java:244)
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper.createNewSessionIfAllowed(HttpSessionSecurityContextRepository.java:398)
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper.saveContext(HttpSessionSecurityContextRepository.java:353)
+	at org.springframework.security.web.context.HttpSessionSecurityContextRepository.saveContext(HttpSessionSecurityContextRepository.java:143)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:109)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:178)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90)
+	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78)
+	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:888)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1597)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+
+************************************************************
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
