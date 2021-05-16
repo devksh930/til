@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
@@ -129,7 +130,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .rememberMeServices(rememberMeServices())
                 )
                 .sessionManagement(s ->
-                        s.maximumSessions(1)
+                        s.sessionCreationPolicy(p-> SessionCreationPolicy.)
+                                .sessionFixation(sessionFixationConfigurer -> sessionFixationConfigurer.changeSessionId())
+                                .maximumSessions(1)
                                 .maxSessionsPreventsLogin(false)//기존에 들어와있는 세션 만료 하지않음
                                 .expiredUrl("/session-expired"))
 
@@ -139,7 +142,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers("/sessions","/session/expire","/session-expired")
+                .antMatchers("/sessions", "/session/expire", "/session-expired")
 
                 .requestMatchers(
 
