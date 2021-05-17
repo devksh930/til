@@ -1,13 +1,8 @@
 package me.devksh930.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -17,6 +12,22 @@ import javax.persistence.Id;
 public class Member {
 
     @Id
-    @Column(name = "name")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
     private String username;
+
+    private int age;
+
+    @ManyToOne
+    @JoinColumn(name = "TEAM_ID")
+    private Team team;
+
+    public void setTeam(Team team) {
+        if (this.team != null) {
+            this.team.getMembers().remove(this);
+        }
+        this.team = team;
+        this.team.getMembers().add(this);
+    }
 }

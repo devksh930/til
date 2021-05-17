@@ -149,3 +149,116 @@ Session session=entityManager.unwrap(Session.class);
     - JPA를 우회하는 SQL에 대해서는 JPA가 전혀 인식하지 못한다
 - 이런 이슈는 JPA를 우회해서 실행하기전 영속성 컨텍스트를 수동으로 플러시해서 영속성 컨텍스트를 동기화하면된다.
 - 스프링프레임워크의 AOP를 활용하면 해당 문제도 해결이 가능하다.
+
+## JPQL
+
+JPQL의 특징
+
+- JPQL은 객체지향 쿼리 언어이다. 테이블 대상 쿼리가 아니라 엔티티 대상 쿼리이다.
+- JPQL은 SQL을 추상화해서 특정 데이터베이스 SQL에 의존하지 않는다.
+- JPQL은 결국 SQL로 변환된다.
+
+### 기본 문법과 쿼리 API
+- JPQL도 SQL과 비슷하게 `SELECT`,`UPDATE`,`DELETE`문을 사용할수 있다.
+- 엔티티 저장시에는 `EntityManager.persist()` 메서드를 사용하면 되므로 `INSERT`문은 없다
+
+### SELECT 문
+
+`SELECT m FROME Member AS m where m.username = 'Hello'`
+
+- 대소문자 구분
+    - 엔티티의 속성은 대소문자를 구분한다.(예: Member, username)
+    - 반면 `SELECT`,`FROM`,`AS`같은 JPQL 키워드는 대소문자를 구분하지 않는다
+- 엔티티 이름
+    - JPQL에서 사용한 Member는 클래스 명이 아니라 엔티티 명이다.(엔티티명은 `@Entity(name = "xxxx")로 지정가능)
+    - 엔티티명 미지정시 클래스 명을 기본값으로 사용
+- 별칭은 필수
+    -`Member as m`을 보게되면 `Member`에 `m`이라는 별칭을 주었따.
+    - 별칭없이 작성하게 되면 잘못된 문법이라는 오류가 발생한다.
+    > `SELECT username FROM Member m` 해당 문법은 `username`을 `m.username`으로 고쳐야한다
+
+### TypeQuery, Query
+작성한 JPQL을 실행하려면 쿼리객체를 만들어야 하는데 쿼리 객체는 `TypeQuery`와 `Query`가 있다.
+
+- ` TypeQuery` : 반환할 타입을 명확하게 지정할수 있다.
+- `Query` : 반환타입을 명확하게 지정할수 없다.
+
+- TypeQuery 사용
+```java
+    public static void TypeQuery(EntityManager em) {
+        TypedQuery<Member> query = em.createQuery("SELECT m from Member m", Member.class);
+
+        List<Member> resultList = query.getResultList();
+        for (Member member : resultList) {
+            System.out.println("member = " + member);
+        }
+    }
+```
+- `em.createQuery()` 두번째 파라미터에 반환할 타입을 지정하면 `TypeQuery`를 반환하고 지정하지 않으면 `Query`를 반환한다
+- 조회대상이 Member 엔티티 이므로 조회대상 타입이 명확하다.
+
+- Query 사용
+```java
+    public static void query(EntityManager em) {
+        Query query = em.createQuery("SELECT m.username, m.age from Member m");
+
+        List resultList = query.getResultList();
+
+        for (Object o : resultList) {
+            Object[] result = (Object[]) o;
+            System.out.println("username " + result[0]);
+            System.out.println("age " + result[1]);
+
+        }
+```
+- 조회대상이 `String`타입과 `Integer`타입 이므로 조회대상이 명확하지 않다.
+- Select 절에서 여러 엔티티나 컬럼을 선택할때는 반환할 타입이 명확하지 않으므로 Query 객체를 사용해야한다.
+
+
+ 결과조회
+- `query.getResultList()` : 결과를 List로 반환한다 만약 결과가 없으면 빈컬렉션을 반환한다
+- `query.getSingleReuslt()` : 결과가 장확히 하나일 때 사용한다.
+    - 결과가 없으면 `javx.persistence.NoResultException` 예외발생
+    - 결과가 1개보다 많으면 `javax.persistence.NonUniqueResultException`예외발생
+  
+### 파라미터 바인딩
+JDBC는 위치 기준 파라미터 바인딩만 지원한다. 하지만 JPQL은 이름 기준 파라미터 바인딩도 지원한다.
+
+- 이름 기준 파라미터
+    - 이름 기준 파라미터(`Named parametes`)는 파라미터를 이름으로 구분하는 방법이다.
+    - 이름 기준 파라미터는 앞에 :를 사용한다
+ ```java
+    public static void namedParameter(EntityManager em){
+        String usernameParam="kim";
+
+        TypedQuery<Member> query = em.createQuery(
+                "SELECT  m FROM Member m WHERE m.username =:username", Member.class);
+
+        query.setParameter("username", usernameParam);
+        List<Member> resultList = query.getResultList();
+}
+``` 
+- `:username`이라는 이름 기준 파라미터를 정의하고 `query.setParameter()`에서 파라미터를 바인딩한다
+- JPQL API는 대부분 메서드 체인 방식으로 설계되어 있어서 다음과 같이 작성도 가능하다.
+```java
+        List<Member> resultList = em.createQuery(
+                "SELECT m FROM Member m WHERE m.username =:username", Member.class)
+                .setParameter("username", usernameParam)
+                .getResultList();
+```
+
+- 위치기준 파라미터
+위치기준 파라미터 `Positional parameters`를 `?`다음 위치 값을 주면 된다.
+```java
+        String usernameParam = "kim";
+
+        List<Member> resultList = em.createQuery("SELECT m FROM Member m where m.username =?1", Member.class)
+                .setParameter(1, usernameParam)
+                .getResultList();
+```
+- 위치 기준 파라미터 방식보다 `이름 기준 파라미터 바인딩 방식을 사용하는 것이 더 명확하다.`
+
+>참고
+> - JPQL사용시 파라미터 바인딩 방식을 사용하지 않고 직접 문자를 더해 만들어 넣으면 악의적인 사용자에 의해서 SQL인젝션 공격격의 위험성이 존재하며 성능이슈도 존재한다.
+> - `파라미터 바인딩 방식은 선택이 아닌 필수이다.`
+> 
