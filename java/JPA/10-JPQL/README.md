@@ -261,4 +261,133 @@ JDBC는 위치 기준 파라미터 바인딩만 지원한다. 하지만 JPQL은 
 >참고
 > - JPQL사용시 파라미터 바인딩 방식을 사용하지 않고 직접 문자를 더해 만들어 넣으면 악의적인 사용자에 의해서 SQL인젝션 공격격의 위험성이 존재하며 성능이슈도 존재한다.
 > - `파라미터 바인딩 방식은 선택이 아닌 필수이다.`
-> 
+
+### 프로젝션
+SELECT 절에 조회할 대상을 지정하는 것을 프로젝션(`projection`)이라 하고 `SELECT {프로젝션 대상} FROM`으로 대상을 선택한다.
+
+프로젝션 대상
+
+- 엔티티
+- 임베디드 타입
+- 스칼라 타입(숫자, 문자, 등 기본데이터타입)
+
+####엔티티 프로젝션
+```sql
+SELECT  m FROM Member m
+SELECT m.team FREE Member m
+```
+
+- 둘다 엔티티를 `프로젝션대상`으로 조회를 했다
+- 컬럼을 하나하나 나열해서 조회해야하는 `SQL`과는 차이가 있다.
+- 이렇게 `조회한 엔티티는 영속성 컨텍스트에서 관리된다`
+
+####임베디드 타입 프로젝션
+
+```java
+String Query = "SELECT o.address FROM Order o";
+List<Address> addresses = em.createQuery(query,Address.class).getResultList();
+```
+- JPQL에서 임베디드 타입은 조회의 시작점이 될수 없다.
+- 해당 코드는 Order를 통해서 임베디트타입을 조회한 코드이다.
+- `임베디드 타입은 엔티티 타입이 아닌 값 타입 이므로 직접조회한 임베디드 타입은 영속성 컨텍스트에서 관리되지 않는다.`
+```SQL
+select 
+        order.cityy,
+        order.street,
+        order.zipcode
+from
+        Orders order 
+```
+
+####스칼라 타입 프로젝션
+- 숫자, 문자, 날짜와 같은 기본데이터 타입들을 스칼라 타입이라 한다.
+```java
+List<String> usernames = em
+        .createQuery("SELECT username FROM Member m", String.class)
+        .getResultList();
+```
+
+중복 데이터를 제거하면 `DISTINCT`를 사용한다.
+```sql
+SELECT DISTINCT username FROM Member m
+```
+통계 쿼리 또한 주로 스칼라 타입으로 조회한다.
+```java
+Double orderAmountAVG =
+    em.createQuery("SELECT AVG(o.orderAmount) FROM Order o",Dobuld.class)
+      .getSingleResult();
+```
+
+#### 여러 값 조회
+- 엔티티를 대상으로 조회하면 편하겠지만 필요한 데이터들만 선택해서 조회를 해야할 경우도 있다.
+- 프로젝션에 여러 값을 선택하면 `TypeQuery`를 사용할 수 없고 대신에 `Query`를 사용해야한다.
+```java
+        Query query = em.createQuery("SELECT m.username, m.age FROM Member m");
+        List resultList = query.getResultList();
+
+        Iterator iterator = resultList.iterator();
+        while (iterator.hasNext()) {
+        Object[] row = (Object[]) iterator.next();
+        String username = (String) row[0];
+        Integer age = (Integer) row[1];
+        System.out.println("username= "+ username+ "age= "+age);
+        }
+```
+
+간결하게 표현도 가능
+```java
+        Query query = em.createQuery("SELECT m.username, m.age FROM Member m");
+        List<Object[]> resultList = query.getResultList();
+        for (Object[] row : resultList) {
+            String username = (String) row[0];
+            Integer age = (Integer) row[1];
+            System.out.println("username= " + username + "age= " + age);
+```
+
+스칼라 타입뿐 아니라 엔티티 타입도 여러값과 함께 조회 가능
+```java
+        List<Object[]> resultList = em.createQuery("SELECT o.member, o.product, o.orderAmount FROM Order o").getResultList();
+
+        for (Object[] row : resultList) {
+            Member member = (Member) row[0];
+            Product product = (Product) row[1];
+            int orderAmount = (Integer) row[2];
+```
+- 이때도 조회한 엔티티는 영속성 컨텍스트에서 관리된다.
+
+#### NEW 명령어
+- username, age 두 필드를 프로젝션해서 타입을 지정할 수 없으므로 `TypeQuery`는 사용이 불가능하다.
+- 실제로 애플리케이션 개발시에는 `Object[]`를 직접 사용하기보단 `UserDTO`처럼 의미 있는 객체로 변환해서 사용한다.
+```java
+        List<UserDTO> userDTOS = 
+        em.createQuery("SELECT new me.devksh930.DTO.UserDTO(m.username,m.age)FROM Member m", UserDTO.class)
+        .getResultList();
+```
+- `SELECT` 다음 `NEW` 명령어를 사용하면 반환받을 클래스를 지정할수 있다.
+- `NEW`명령어를 사용한 클래스로 `TypeQuery`를 사용하면 객체변환작업을 줄일수 있다.
+
+주의사항
+
+- 패키지명을 포함한 전체 클래스 명을 입력해야한다.
+- 순서와 타입이 일치하는 생성자가 필요하다.
+
+### 페이징 API
+데이터 베이스 마다 페이징을 처리하는 `SQL`문법이 다르다.
+
+`JPA는 페이징을 2개의 API로 추상화했다`
+- `setFirstResult(int startPosition)` : 조회 시작 위치(0부터시작)
+- `setMaxResults(int maxResult)` : 조회할 데이터 수
+
+```java
+        TypedQuery<Member> query = em
+        .createQuery("SELECT m FROM Member m ORDER BY m.username DESC ", Member.class);
+
+        query.setFirstResult(10);
+        query.setMaxResults(20);
+        List<Member> resultList = query.getResultList();
+```
+- 11번째 부터 시작해서 20건의 데이터를 조회한다.
+- DB마다 다른 페이징 쿼리를 보낸다.(HSQLDB,MySQL,PostgreSQL,Oracle,SQLServer 등)
+- 페이징 SQL을 최적화를 하려 한다면 JPA API아닌 네이티브 SQL을 사용하여야 한다.
+
+### 집합과 정렬

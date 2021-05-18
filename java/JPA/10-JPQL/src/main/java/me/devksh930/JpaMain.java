@@ -2,14 +2,16 @@ package me.devksh930;
 
 
 import com.querydsl.jpa.impl.JPAQuery;
-import me.devksh930.entity.Member;
-import me.devksh930.entity.Team;
+import me.devksh930.DTO.UserDTO;
+import me.devksh930.entity.*;
 import org.hibernate.Criteria;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class JpaMain {
@@ -21,11 +23,13 @@ public class JpaMain {
 
         try {
             tx.begin();
-//            init(em);
             tx.commit();
+
+            pagingAPI(em);
 //            typeQuery(em);
 //            query(em);
-            postionalParameter(em);
+//            postionalParameter(em);
+//            manyValueFind(em);
         } catch (Exception e) {
             tx.rollback();
         } finally {
@@ -39,13 +43,25 @@ public class JpaMain {
         team.setName("팀1");
         em.persist(team);
 
-        Member member = new Member();
-        member.setAge(20);
-        member.setUsername("kim");
-        member.setTeam(team);
-        em.persist(member);
+        Member member1 = new Member();
+        member1.setAge(20);
+        member1.setUsername("kim");
+        member1.setTeam(team);
+        em.persist(member1);
 
+        Member member2 = new Member();
+        member2.setAge(20);
+        member2.setUsername("hong");
+        member2.setTeam(team);
+        em.persist(member2);
 
+        Member findmember = em.find(Member.class, 1L);
+        Order order = new Order();
+        order.setMember(findmember);
+        order.setOrderAmount(5);
+        order.setAddress(new Address("home", "busan", "12121"));
+        order.setProduct(em.find(Product.class, 1L));
+        em.persist(order);
     }
 
 //    public static void findJpql(EntityManager em) {
@@ -123,5 +139,60 @@ public class JpaMain {
         }
     }
 
+    public static void manyValueFind(EntityManager em) {
+        Query query = em.createQuery("SELECT m.username, m.age FROM Member m");
+        List<Object[]> resultList = query.getResultList();
+        for (Object[] row : resultList) {
+            String username = (String) row[0];
+            Integer age = (Integer) row[1];
+            System.out.println("username= " + username + "age= " + age);
+
+        }
+//        Iterator iterator = resultList.iterator();
+//        while (iterator.hasNext()) {
+//            Object[] row = (Object[]) iterator.next();
+//            String username = (String) row[0];
+//            Integer age = (Integer) row[1];
+//            System.out.println("username= "+ username+ "age= "+age);
+//    }
+    }
+
+    public static void manyProjectionEntityFind(EntityManager em) { //여러 프로젝션 엔티티 타입으로 조회
+        List<Object[]> resultList = em.createQuery("SELECT o.member, o.product, o.orderAmount FROM Order o").getResultList();
+
+        for (Object[] row : resultList) {
+            Member member = (Member) row[0];    // 엔티티
+            Product product = (Product) row[1]; // 엔티티
+            int orderAmount = (Integer) row[2]; // 스칼라
+
+            System.out.println("member = " + member + " product = " + product + " orderAmount = " + orderAmount);
+        }
+    }
+
+    public static List<UserDTO> mappingDtoFind(EntityManager em) { //DTO를 사용한 조회
+//        List<Object[]> resultList = em.createQuery("SELECT m.username,m.age FROM Member m").getResultList();
+//        //객체 변환
+//        List<UserDTO> userDTOS = new ArrayList<UserDTO>();
+//        for (Object[] row : resultList) {
+//            UserDTO userDTO = new UserDTO((String) row[0], (Integer) row[1]);
+//            userDTOS.add(userDTO);
+//        }
+//
+//        new 명령어 사용
+        List<UserDTO> userDTOS = em.createQuery("SELECT new me.devksh930.DTO.UserDTO(m.username,m.age)FROM Member m", UserDTO.class).getResultList();
+        return userDTOS;
+    }
+
+    public static void pagingAPI(EntityManager em) {
+        TypedQuery<Member> query = em.createQuery("SELECT m FROM Member m ORDER BY m.username DESC ", Member.class);
+
+        query.setFirstResult(0);
+        query.setMaxResults(20);
+        List<Member> resultList = query.getResultList();
+
+        for (Member member : resultList) {
+            System.out.println(member.getId());
+        }
+    }
 
 }
