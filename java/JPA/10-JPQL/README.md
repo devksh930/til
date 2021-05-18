@@ -137,13 +137,14 @@ JPA는 JDBC 커넥션을 획득하는 API를 제공하지 않는다. JPA 구현�
 ```java
 Session session=entityManager.unwrap(Session.class);
         session.doWork(newWork()){
-            
-    @Override
-    public void execute(Connection connection)throws SQLException{
-    //work    
+
+@Override
+public void execute(Connection connection)throws SQLException{
+        //work    
         }
         }
 ```
+
 - JDBC나 마이바티스를 JPA와 함께 사용하면 영속성 컨텍스트를 적절한 시점에 강제로 플러시 행햐ㅏㄴ다.
 - JDBC를 직접사용하던지 마이바티스 같은 SQL매퍼를 쓰게되면 JPA를 우회해서 데이터베이스에 접근한다.
     - JPA를 우회하는 SQL에 대해서는 JPA가 전혀 인식하지 못한다
@@ -159,6 +160,7 @@ JPQL의 특징
 - JPQL은 결국 SQL로 변환된다.
 
 ### 기본 문법과 쿼리 API
+
 - JPQL도 SQL과 비슷하게 `SELECT`,`UPDATE`,`DELETE`문을 사용할수 있다.
 - 엔티티 저장시에는 `EntityManager.persist()` 메서드를 사용하면 되므로 `INSERT`문은 없다
 
@@ -172,97 +174,107 @@ JPQL의 특징
 - 엔티티 이름
     - JPQL에서 사용한 Member는 클래스 명이 아니라 엔티티 명이다.(엔티티명은 `@Entity(name = "xxxx")로 지정가능)
     - 엔티티명 미지정시 클래스 명을 기본값으로 사용
-- 별칭은 필수
-    -`Member as m`을 보게되면 `Member`에 `m`이라는 별칭을 주었따.
+- 별칭은 필수 -`Member as m`을 보게되면 `Member`에 `m`이라는 별칭을 주었따.
     - 별칭없이 작성하게 되면 잘못된 문법이라는 오류가 발생한다.
-    > `SELECT username FROM Member m` 해당 문법은 `username`을 `m.username`으로 고쳐야한다
+  > `SELECT username FROM Member m` 해당 문법은 `username`을 `m.username`으로 고쳐야한다
 
 ### TypeQuery, Query
+
 작성한 JPQL을 실행하려면 쿼리객체를 만들어야 하는데 쿼리 객체는 `TypeQuery`와 `Query`가 있다.
 
 - ` TypeQuery` : 반환할 타입을 명확하게 지정할수 있다.
 - `Query` : 반환타입을 명확하게 지정할수 없다.
 
 - TypeQuery 사용
-```java
-    public static void TypeQuery(EntityManager em) {
-        TypedQuery<Member> query = em.createQuery("SELECT m from Member m", Member.class);
 
-        List<Member> resultList = query.getResultList();
-        for (Member member : resultList) {
-            System.out.println("member = " + member);
+```java
+    public static void TypeQuery(EntityManager em){
+        TypedQuery<Member> query=em.createQuery("SELECT m from Member m",Member.class);
+
+        List<Member> resultList=query.getResultList();
+        for(Member member:resultList){
+        System.out.println("member = "+member);
         }
-    }
+        }
 ```
+
 - `em.createQuery()` 두번째 파라미터에 반환할 타입을 지정하면 `TypeQuery`를 반환하고 지정하지 않으면 `Query`를 반환한다
 - 조회대상이 Member 엔티티 이므로 조회대상 타입이 명확하다.
 
 - Query 사용
+
 ```java
-    public static void query(EntityManager em) {
-        Query query = em.createQuery("SELECT m.username, m.age from Member m");
+    public static void query(EntityManager em){
+        Query query=em.createQuery("SELECT m.username, m.age from Member m");
 
-        List resultList = query.getResultList();
+        List resultList=query.getResultList();
 
-        for (Object o : resultList) {
-            Object[] result = (Object[]) o;
-            System.out.println("username " + result[0]);
-            System.out.println("age " + result[1]);
+        for(Object o:resultList){
+        Object[]result=(Object[])o;
+        System.out.println("username "+result[0]);
+        System.out.println("age "+result[1]);
 
         }
 ```
+
 - 조회대상이 `String`타입과 `Integer`타입 이므로 조회대상이 명확하지 않다.
 - Select 절에서 여러 엔티티나 컬럼을 선택할때는 반환할 타입이 명확하지 않으므로 Query 객체를 사용해야한다.
 
+결과조회
 
- 결과조회
 - `query.getResultList()` : 결과를 List로 반환한다 만약 결과가 없으면 빈컬렉션을 반환한다
 - `query.getSingleReuslt()` : 결과가 장확히 하나일 때 사용한다.
     - 결과가 없으면 `javx.persistence.NoResultException` 예외발생
     - 결과가 1개보다 많으면 `javax.persistence.NonUniqueResultException`예외발생
-  
+
 ### 파라미터 바인딩
+
 JDBC는 위치 기준 파라미터 바인딩만 지원한다. 하지만 JPQL은 이름 기준 파라미터 바인딩도 지원한다.
 
 - 이름 기준 파라미터
     - 이름 기준 파라미터(`Named parametes`)는 파라미터를 이름으로 구분하는 방법이다.
     - 이름 기준 파라미터는 앞에 :를 사용한다
+
  ```java
     public static void namedParameter(EntityManager em){
         String usernameParam="kim";
 
-        TypedQuery<Member> query = em.createQuery(
-                "SELECT  m FROM Member m WHERE m.username =:username", Member.class);
+        TypedQuery<Member> query=em.createQuery(
+        "SELECT  m FROM Member m WHERE m.username =:username",Member.class);
 
-        query.setParameter("username", usernameParam);
-        List<Member> resultList = query.getResultList();
-}
+        query.setParameter("username",usernameParam);
+        List<Member> resultList=query.getResultList();
+        }
 ``` 
+
 - `:username`이라는 이름 기준 파라미터를 정의하고 `query.setParameter()`에서 파라미터를 바인딩한다
 - JPQL API는 대부분 메서드 체인 방식으로 설계되어 있어서 다음과 같이 작성도 가능하다.
+
 ```java
-        List<Member> resultList = em.createQuery(
-                "SELECT m FROM Member m WHERE m.username =:username", Member.class)
-                .setParameter("username", usernameParam)
-                .getResultList();
+        List<Member> resultList=em.createQuery(
+        "SELECT m FROM Member m WHERE m.username =:username",Member.class)
+        .setParameter("username",usernameParam)
+        .getResultList();
 ```
 
-- 위치기준 파라미터
-위치기준 파라미터 `Positional parameters`를 `?`다음 위치 값을 주면 된다.
-```java
-        String usernameParam = "kim";
+- 위치기준 파라미터 위치기준 파라미터 `Positional parameters`를 `?`다음 위치 값을 주면 된다.
 
-        List<Member> resultList = em.createQuery("SELECT m FROM Member m where m.username =?1", Member.class)
-                .setParameter(1, usernameParam)
-                .getResultList();
+```java
+        String usernameParam="kim";
+
+        List<Member> resultList=em.createQuery("SELECT m FROM Member m where m.username =?1",Member.class)
+        .setParameter(1,usernameParam)
+        .getResultList();
 ```
+
 - 위치 기준 파라미터 방식보다 `이름 기준 파라미터 바인딩 방식을 사용하는 것이 더 명확하다.`
 
->참고
+> 참고
 > - JPQL사용시 파라미터 바인딩 방식을 사용하지 않고 직접 문자를 더해 만들어 넣으면 악의적인 사용자에 의해서 SQL인젝션 공격격의 위험성이 존재하며 성능이슈도 존재한다.
 > - `파라미터 바인딩 방식은 선택이 아닌 필수이다.`
 
 ### 프로젝션
+
 SELECT 절에 조회할 대상을 지정하는 것을 프로젝션(`projection`)이라 하고 `SELECT {프로젝션 대상} FROM`으로 대상을 선택한다.
 
 프로젝션 대상
@@ -271,9 +283,11 @@ SELECT 절에 조회할 대상을 지정하는 것을 프로젝션(`projection`)
 - 임베디드 타입
 - 스칼라 타입(숫자, 문자, 등 기본데이터타입)
 
-####엔티티 프로젝션
+#### 엔티티 프로젝션
+
 ```sql
-SELECT  m FROM Member m
+SELECT m
+FROM Member m
 SELECT m.team FREE Member m
 ```
 
@@ -281,88 +295,103 @@ SELECT m.team FREE Member m
 - 컬럼을 하나하나 나열해서 조회해야하는 `SQL`과는 차이가 있다.
 - 이렇게 `조회한 엔티티는 영속성 컨텍스트에서 관리된다`
 
-####임베디드 타입 프로젝션
+#### 임베디드 타입 프로젝션
 
 ```java
-String Query = "SELECT o.address FROM Order o";
-List<Address> addresses = em.createQuery(query,Address.class).getResultList();
+String Query="SELECT o.address FROM Order o";
+        List<Address> addresses=em.createQuery(query,Address.class).getResultList();
 ```
+
 - JPQL에서 임베디드 타입은 조회의 시작점이 될수 없다.
 - 해당 코드는 Order를 통해서 임베디트타입을 조회한 코드이다.
 - `임베디드 타입은 엔티티 타입이 아닌 값 타입 이므로 직접조회한 임베디드 타입은 영속성 컨텍스트에서 관리되지 않는다.`
+
 ```SQL
-select 
-        order.cityy,
-        order.street,
-        order.zipcode
-from
-        Orders order 
+select order.cityy,
+       order.street,
+       order.zipcode
+from Orders
+order 
 ```
 
-####스칼라 타입 프로젝션
+#### 스칼라 타입 프로젝션
+
 - 숫자, 문자, 날짜와 같은 기본데이터 타입들을 스칼라 타입이라 한다.
+
 ```java
-List<String> usernames = em
-        .createQuery("SELECT username FROM Member m", String.class)
+List<String> usernames=em
+        .createQuery("SELECT username FROM Member m",String.class)
         .getResultList();
 ```
 
 중복 데이터를 제거하면 `DISTINCT`를 사용한다.
+
 ```sql
-SELECT DISTINCT username FROM Member m
+SELECT DISTINCT username
+FROM Member m
 ```
+
 통계 쿼리 또한 주로 스칼라 타입으로 조회한다.
+
 ```java
-Double orderAmountAVG =
-    em.createQuery("SELECT AVG(o.orderAmount) FROM Order o",Dobuld.class)
-      .getSingleResult();
+Double orderAmountAVG=
+        em.createQuery("SELECT AVG(o.orderAmount) FROM Order o",Dobuld.class)
+        .getSingleResult();
 ```
 
 #### 여러 값 조회
+
 - 엔티티를 대상으로 조회하면 편하겠지만 필요한 데이터들만 선택해서 조회를 해야할 경우도 있다.
 - 프로젝션에 여러 값을 선택하면 `TypeQuery`를 사용할 수 없고 대신에 `Query`를 사용해야한다.
-```java
-        Query query = em.createQuery("SELECT m.username, m.age FROM Member m");
-        List resultList = query.getResultList();
 
-        Iterator iterator = resultList.iterator();
-        while (iterator.hasNext()) {
-        Object[] row = (Object[]) iterator.next();
-        String username = (String) row[0];
-        Integer age = (Integer) row[1];
-        System.out.println("username= "+ username+ "age= "+age);
+```java
+        Query query=em.createQuery("SELECT m.username, m.age FROM Member m");
+        List resultList=query.getResultList();
+
+        Iterator iterator=resultList.iterator();
+        while(iterator.hasNext()){
+        Object[]row=(Object[])iterator.next();
+        String username=(String)row[0];
+        Integer age=(Integer)row[1];
+        System.out.println("username= "+username+"age= "+age);
         }
 ```
 
 간결하게 표현도 가능
+
 ```java
-        Query query = em.createQuery("SELECT m.username, m.age FROM Member m");
-        List<Object[]> resultList = query.getResultList();
-        for (Object[] row : resultList) {
-            String username = (String) row[0];
-            Integer age = (Integer) row[1];
-            System.out.println("username= " + username + "age= " + age);
+        Query query=em.createQuery("SELECT m.username, m.age FROM Member m");
+        List<Object[]>resultList=query.getResultList();
+        for(Object[]row:resultList){
+        String username=(String)row[0];
+        Integer age=(Integer)row[1];
+        System.out.println("username= "+username+"age= "+age);
 ```
 
 스칼라 타입뿐 아니라 엔티티 타입도 여러값과 함께 조회 가능
-```java
-        List<Object[]> resultList = em.createQuery("SELECT o.member, o.product, o.orderAmount FROM Order o").getResultList();
 
-        for (Object[] row : resultList) {
-            Member member = (Member) row[0];
-            Product product = (Product) row[1];
-            int orderAmount = (Integer) row[2];
+```java
+        List<Object[]>resultList=em.createQuery("SELECT o.member, o.product, o.orderAmount FROM Order o").getResultList();
+
+        for(Object[]row:resultList){
+        Member member=(Member)row[0];
+        Product product=(Product)row[1];
+        int orderAmount=(Integer)row[2];
 ```
+
 - 이때도 조회한 엔티티는 영속성 컨텍스트에서 관리된다.
 
 #### NEW 명령어
+
 - username, age 두 필드를 프로젝션해서 타입을 지정할 수 없으므로 `TypeQuery`는 사용이 불가능하다.
 - 실제로 애플리케이션 개발시에는 `Object[]`를 직접 사용하기보단 `UserDTO`처럼 의미 있는 객체로 변환해서 사용한다.
+
 ```java
-        List<UserDTO> userDTOS = 
-        em.createQuery("SELECT new me.devksh930.DTO.UserDTO(m.username,m.age)FROM Member m", UserDTO.class)
+        List<UserDTO> userDTOS=
+        em.createQuery("SELECT new me.devksh930.DTO.UserDTO(m.username,m.age)FROM Member m",UserDTO.class)
         .getResultList();
 ```
+
 - `SELECT` 다음 `NEW` 명령어를 사용하면 반환받을 클래스를 지정할수 있다.
 - `NEW`명령어를 사용한 클래스로 `TypeQuery`를 사용하면 객체변환작업을 줄일수 있다.
 
@@ -372,22 +401,74 @@ Double orderAmountAVG =
 - 순서와 타입이 일치하는 생성자가 필요하다.
 
 ### 페이징 API
+
 데이터 베이스 마다 페이징을 처리하는 `SQL`문법이 다르다.
 
 `JPA는 페이징을 2개의 API로 추상화했다`
+
 - `setFirstResult(int startPosition)` : 조회 시작 위치(0부터시작)
 - `setMaxResults(int maxResult)` : 조회할 데이터 수
 
 ```java
-        TypedQuery<Member> query = em
-        .createQuery("SELECT m FROM Member m ORDER BY m.username DESC ", Member.class);
+        TypedQuery<Member> query=em
+        .createQuery("SELECT m FROM Member m ORDER BY m.username DESC ",Member.class);
 
         query.setFirstResult(10);
         query.setMaxResults(20);
-        List<Member> resultList = query.getResultList();
+        List<Member> resultList=query.getResultList();
 ```
+
 - 11번째 부터 시작해서 20건의 데이터를 조회한다.
 - DB마다 다른 페이징 쿼리를 보낸다.(HSQLDB,MySQL,PostgreSQL,Oracle,SQLServer 등)
 - 페이징 SQL을 최적화를 하려 한다면 JPA API아닌 네이티브 SQL을 사용하여야 한다.
 
 ### 집합과 정렬
+
+|함수|설명|
+|:--------|---|
+| COUNT   | 결과 수를 구한다 반환타입:`Long`   |
+|MAX, MIN |최대 최소값 을 구한다. 문자,숫자,날짜에 사용   |
+|AVG| 평균값을 구한다. 숫자 타입만 사용 가능 반환타입:`Double`   |
+|SUM| 합을 구한다. 숫자 타입만 사용가능, 반환타입 :정수합 - `Long`, 소수합 - `Double`, BigIngteger합 - `BigInteger` BigDecimal합: `BigDecimal`|
+
+집합 함수 사용시 참고사항
+
+- `NULL`값은 무시하므로 통계에 잡히지 않는다(DISTINCT가 정의 되어 있어도 무시된다)
+- 만약 값이 없을때 `SUM, AVG, MAX, MIN`함수를 사용하면 NULL값이 된다. 하지만 `COUNT`는 0이 된다
+- DISTINCT를 집합 함수 안에 사용해서 중복된 값을 제거하고 나서 집합을 구할 수 있다.
+    - 예 `SELCT COUNT(DISTINCT m.ag) FROM Member m`
+- DISTINCT를 `COUNT`에서 사용할 때 임베디드 타입은 지원하지 않는다.
+
+### GROUP BY, HAVING
+
+GROUP BY는 통계 데이터를 구할 때 특정 그룹끼리 묶어준다.
+
+- 팀이름을 기준으로 그룹별로 묶어서 통계를 구하는 쿼리
+```SQL
+SELECT 
+       t.name, COUNT(m.age), SUM(m.age), AVG(m.age), MAX(m.age), MIN(m.age)
+FROM   Member m LEFT JOIN m.team t
+GROUP BY t.name
+```
+
+
+- 팀이름을 기준으로 그룹별로 묶어서 통계를 구하는 쿼리 + 평균나이가 10살 이상인 그룹을 조회
+```SQL
+SELECT 
+       t.name, COUNT(m.age), SUM(m.age), AVG(m.age), MAX(m.age), MIN(m.age)
+FROM  Member m LEFT JOIN m.team t
+GROUP BY t.name
+HAVING AVG(m.age) >= 10
+```
+
+### 정렬(ORDER BY)
+ORDER BY는 결과를 정렬할 때 사용 한다.
+
+- 나이를 기준으로 내림차순 정렬 같으면 이름을 기준으로 오름차수 정렬
+```SQL
+SELECT m 
+FROM Member m ORDER BY m.age DESC
+, m.username ASC
+```
+- ASC : 오름차순(기본값)
+- DESC : 내림차순
