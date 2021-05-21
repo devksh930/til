@@ -472,3 +472,13 @@ FROM Member m ORDER BY m.age DESC
 ```
 - ASC : 오름차순(기본값)
 - DESC : 내림차순
+
+### JPQL 조인
+
+- 내부 조인 : 내부 조인은 `INNER JOIN`을 사용한다. 참고로 `INNER`는 생략 가능
+```java
+        String teamName = "팀1";
+        String query = "SELECT m FROM Member m INNER JOIN m.team t" +
+        " WHERE t.name = :teamName";
+        List<Member> teamName1 = em.createQuery(query, Member.class).setParameter("teamName", teamName).getResultList();
+```

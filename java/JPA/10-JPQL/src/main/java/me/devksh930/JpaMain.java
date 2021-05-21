@@ -23,13 +23,9 @@ public class JpaMain {
 
         try {
             tx.begin();
-            tx.commit();
 
-            pagingAPI(em);
-//            typeQuery(em);
-//            query(em);
-//            postionalParameter(em);
-//            manyValueFind(em);
+            tx.commit();
+            innerJoin(em);
         } catch (Exception e) {
             tx.rollback();
         } finally {
@@ -192,6 +188,18 @@ public class JpaMain {
 
         for (Member member : resultList) {
             System.out.println(member.getId());
+        }
+    }
+
+    public static void innerJoin(EntityManager em) {
+        String teamName = "팀1";
+        String query = "SELECT m FROM Member m INNER JOIN m.team t" +
+                " WHERE t.name = :teamName";
+        List<Member> teamName1 = em.createQuery(query, Member.class).setParameter("teamName", teamName).getResultList();
+
+        for (Member member : teamName1) {
+            System.out.println(member.getUsername());
+            System.out.println(member.getTeam().getName());
         }
     }
 
