@@ -1,12 +1,11 @@
 # Entity 매핑
 - JPA를 사용하는데 가장 중요한 일은 엔티티와 테이블을 정확히 매핑하는것이다.
  JPA 매핑 어노테이션은 크게 4가지로 분류할수 있다
-<br>
-- 객체와 테이블 매핑 : @Entity, @Table
-- 기본 키 매핑 : @Id
-- 필드와 컬럼 매핑 : @Column
-- 연관관계 매핑 : @ManyToOne, @JoinColumn
- <br> 
+  
+- `객체와 테이블 매핑 `: @Entity, @Table
+- `기본 키 매핑` : @Id
+- `필드와 컬럼 매핑` : @Column
+- `연관관계 매핑` : @ManyToOne, @JoinColumn
   
 ### @Entity
 - 테이블과 매핑할 클래스는 @Entity 어노테이션을 붙여야 한다
