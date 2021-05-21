@@ -7,9 +7,11 @@
 - 필드와 컬럼 매핑 : @Column
 - 연관관계 매핑 : @ManyToOne, @JoinColumn
  <br> 
+  
 ### @Entity
 - 테이블과 매핑할 클래스는 @Entity 어노테이션을 붙여야 한다
 - 이 어노테이션이 붙은 클래스는 JPA과 관리한다
+
 > #### 주의사항
 >- 기본 생성자는 필수(파라미터가 없는 public 또는 protected 생성자).
 >- final 클래스, enum, interface,inner클래스에서는 사용이 불가능
