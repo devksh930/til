@@ -1,5 +1,5 @@
 public class testfinal {
-    public final class Parent {
+    public class Parent {
         public String name;
 
 
