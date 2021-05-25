@@ -1,4 +1,4 @@
-package me.devksh930.datastructure;
+package me.devksh930.datastructure.array;
 
 public class Capter01 {
     public static void main(String[] args) {

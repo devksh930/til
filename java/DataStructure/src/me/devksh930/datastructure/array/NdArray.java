@@ -1,4 +1,4 @@
-package me.devksh930.datastructure;
+package me.devksh930.datastructure.array;
 
 import java.util.Arrays;
 
