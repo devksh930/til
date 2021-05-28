@@ -7,7 +7,7 @@ public class DoubleLinkedList {
         this.head = null;
     }
 
-    public void pringPrevNode(int value) {
+    public void printPrevNode(int value) {
         if (this.head == null) {
             System.out.println(" 이중 연결 리스트가 비어 있습니다");
             return;
@@ -43,6 +43,7 @@ public class DoubleLinkedList {
         newNode.setPrev(pointer);
         pointer.setNext(newNode);
     }
+
     public void printAll() {
         Node pointer = this.head;
 
@@ -55,5 +56,32 @@ public class DoubleLinkedList {
 
         builder.delete(builder.lastIndexOf(" <-> "), builder.length());
         System.out.println(builder.toString());
+    }
+
+    public void delete(int value) {
+        Node pointer = this.head;
+//        HEAD노드의 값이 value랑 같을 경우
+        if (pointer.getValue() == value) {
+            Node removeNode = this.head;
+            this.head = this.head.getNext();
+
+            removeNode = null;
+            return;
+        }
+        Node preveNode = pointer;
+        while (pointer != null && pointer.getValue() != value) {
+            preveNode = pointer;
+            pointer = pointer.getNext();
+        }
+
+        Node temp = pointer.getNext();
+        if (temp == null) {
+            preveNode.setNext(null);
+
+        } else {
+            temp.setPrev(preveNode);
+            preveNode.setNext(pointer.getNext());
+        }
+        pointer = null;
     }
 }

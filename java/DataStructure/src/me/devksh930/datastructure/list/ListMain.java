@@ -60,10 +60,14 @@ public class ListMain {
         System.out.println("이중 연결 리스트");
 
         doubleLinkedList.printAll();
-        doubleLinkedList.pringPrevNode(2);
-        doubleLinkedList.pringPrevNode(1);
-        doubleLinkedList.pringPrevNode(19);
+        doubleLinkedList.printPrevNode(2);
+        doubleLinkedList.printPrevNode(1);
+        doubleLinkedList.printPrevNode(19);
 
         return doubleLinkedList;
+    }
+
+    public static void doubleLinkedListDelete(DoubleLinkedList doubleLinkedList) {
+        doubleLinkedList.delete(1);
     }
 }
