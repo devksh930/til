@@ -1,5 +1,6 @@
 package me.devksh930.datastructure.list;
 
+import me.devksh930.datastructure.list.circuilar.CircularLinkedList;
 import me.devksh930.datastructure.list.doubleLink.DoubleLinkedList;
 import me.devksh930.datastructure.list.singlLink.SinglyLinkedList;
 
@@ -7,8 +8,8 @@ public class ListMain {
     public static void main(String[] args) {
 //        SinglyLinkedList singlyLinkedList = initSingleList();
 //        singleLinkedListDelete(singlyLinkedList);
-        DoubleLinkedList doubleLinkedList = initDoubleLinkedList();
-
+//        DoubleLinkedList doubleLinkedList = initDoubleLinkedList();
+        CircularLinkedList circularLinkedList = initCircularLinkedList();
     }
 
     public static SinglyLinkedList initSingleList() {
@@ -69,5 +70,18 @@ public class ListMain {
 
     public static void doubleLinkedListDelete(DoubleLinkedList doubleLinkedList) {
         doubleLinkedList.delete(1);
+    }
+
+    public static CircularLinkedList initCircularLinkedList() {
+        CircularLinkedList circularLinkedList = new CircularLinkedList();
+        circularLinkedList.append(1);
+        circularLinkedList.append(3);
+        circularLinkedList.append(5);
+        circularLinkedList.append(4);
+        circularLinkedList.append(7);
+        circularLinkedList.append(6);
+
+        circularLinkedList.printAll();
+        return circularLinkedList;
     }
 }
