@@ -130,7 +130,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .rememberMeServices(rememberMeServices())
                 )
                 .sessionManagement(s ->
-                        s.sessionCreationPolicy(p-> SessionCreationPolicy.)
+                        s
+//                                .sessionCreationPolicy(p-> SessionCreationPolicy.)
                                 .sessionFixation(sessionFixationConfigurer -> sessionFixationConfigurer.changeSessionId())
                                 .maximumSessions(1)
                                 .maxSessionsPreventsLogin(false)//기존에 들어와있는 세션 만료 하지않음

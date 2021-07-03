@@ -8,7 +8,6 @@
 </head>
 <body>
 <header>
-    <div id="fixed"></div>
     <div class="center-align"> <!-- 가운데 정렬용 div -->
         <div id="header-top">
             <span> 네이버를 시작페이지로 > | </span>
@@ -24,7 +23,9 @@
             <h2 class="blind">검색 창</h2>
             <fieldset>
                 <legend class="blind">검색</legend>
-                <input type="text"/>
+                <input type="text" />
+                <span id="search-keyboard"></span>
+                <span id="search-history"></span>
                 <button>
                     <span class="blind">검색</span>
                     <span id="search-image"></span>
@@ -34,41 +35,58 @@
     </div>
 </header>
 <nav>
-    <div class="center-align">
+    <div class="center-align relative">
+        <div id="search-ranking">
+            <h2 class="blind">실시간 검색어</h2>
+            <span id="rank-number">1</span>
+            <span id="rank-title">devksh930</span>
+        </div>
         <ul>
             <li><a href=""><span></span><span class="blind">메일</span></a></li>
             <li><a href=""><span></span><span class="blind">카페</span></a></li>
             <li><a href=""><span></span><span class="blind">블로그</span></a></li>
             <li><a href=""><span></span><span class="blind">지식인</span></a></li>
             <li><a href=""><span></span><span class="blind">쇼핑</span></a></li>
-            <li><a href=""><span></span><span class="blind">네이버페이</span></a></li>
             <li><a href=""><span></span><span class="blind">네이버쇼핑</span></a></li>
-
+            <li><a href=""><span></span><span class="blind">네이버페이</span></a></li>
+            <li><a href=""><span></span><span class="blind">네이버TV</span></a></li>
+            <li><a href=""><span></span><span class="blind">사전</span></a></li>
+            <li><a href=""><span></span><span class="blind">뉴스</span></a></li>
+            <li><a href=""><span></span><span class="blind">증권</span></a></li>
+            <li><a href=""><span></span><span class="blind">부동산</span></a></li>
+            <li><a href=""><span></span><span class="blind">지도</span></a></li>
+            <li><a href=""><span></span><span class="blind">영화</span></a></li>
+            <li><a href=""><span></span><span class="blind">뮤직</span></a></li>
+            <li><a href=""><span></span><span class="blind">책</span></a></li>
+            <li><a href=""><span></span><span class="blind">웹툰</span></a></li>
         </ul>
+        <div class="nav-divider"></div>
+        <ul><li><a href=""><span class="blind">더보기</span></a></li></ul>
     </div>
 </nav>
 
 <main>
-    <h3>실시간 검색어</h3>
-    <h3>연합뉴시</h3>
-    <ol>
-        <li>충격) 배고프다</li>
-        <li>속보) 잠이오네</li>
-        <li>중대발표) 게임하러갈까</li>
-    </ol>
-    <h3>언론사 목록</h3>
-    <ul>
-        <li><img src="국민일보.png" alt="국민일보"/></li>
-        <li><img src="한국경제.png" alt="한국일보"/></li>
-        <li><img src="국민일보.png" alt="국민일보"/></li>
-        <li><img src="한국경제.png" alt="한국일보"/></li>
-        <li><img src="국민일보.png" alt="국민일보"/></li>
-        <li><img src="한국경제.png" alt="한국일보"/></li>
-    </ul>
-    <h3>로그인</h3>
-    <h3>뉴스</h3>
-    <h3>법률</h3>
-    <h6>쇼핑</h6>
+    <div class="center-align">
+        <h3>연합뉴스</h3>
+        <ol>
+            <li>충격) 배고프다</li>
+            <li>속보) 잠이오네</li>
+            <li>중대발표) 게임하러갈까</li>
+        </ol>
+        <h3>언론사 목록</h3>
+        <ul>
+            <li><img src="국민일보.png" alt="국민일보"/></li>
+            <li><img src="한국경제.png" alt="한국일보"/></li>
+            <li><img src="국민일보.png" alt="국민일보"/></li>
+            <li><img src="한국경제.png" alt="한국일보"/></li>
+            <li><img src="국민일보.png" alt="국민일보"/></li>
+            <li><img src="한국경제.png" alt="한국일보"/></li>
+        </ul>
+        <h3>로그인</h3>
+        <h3>뉴스</h3>
+        <h3>법률</h3>
+        <h6>쇼핑</h6>
+    </div>
 </main>
 
 <footer>

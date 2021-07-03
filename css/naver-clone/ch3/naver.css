@@ -5,6 +5,18 @@
 body, html {
     margin: 0;
     padding: 0;
+    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+#fixed {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
 }
 
 .blind {
@@ -16,6 +28,10 @@ body, html {
     height: 1px;
 }
 
+.relative {
+    position: relative;
+}
+
 /* 선택자(selector)*/
 /*#header-center{*/
 .center-align {
@@ -23,20 +39,30 @@ body, html {
     width: 1080px;
 }
 
-#header-top {
-    float: right;
+header {
+    height: 170px;
 }
 
-#header-top span{
+#header-top {
+    float: right;
+    margin-top: 8px;
+}
+
+#header-top span {
     color: #888;
     letter-spacing: -1px;
     font-size: 11px;
     line-height: 22px;
 }
 
+#header-search {
+    clear: both;
+    padding-top: 12px;
+
+}
+
 #header-search a {
     text-decoration: none;
-    clear: both;
 }
 
 #header-search h1 {
@@ -50,7 +76,8 @@ body, html {
     background: url(./sp_search.png) -4px -4px no-repeat;
     vertical-align: middle;
     position: relative;
-    top: -6px;
+    top: -5px;
+    left: 1px;
 }
 
 #header-search h1 span {
@@ -84,8 +111,8 @@ body, html {
     padding: 0;
     outline: none;
     vertical-align: top;
-    width: 405px;
-    display: inline-block;
+    width: 395px;
+    height: 23px;
 }
 
 #header-search fieldset button {
@@ -99,32 +126,49 @@ body, html {
     top: -2px;
 }
 
+#search-keyboard {
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -33px -60px;
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#search-history {
+    background-image: url(./sp_search.png);
+    background-repeat: no-repeat;
+    background-position: -87px -60px;
+    width: 9px;
+    height: 4px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
 #search-image {
     background-image: url(./sp_search.png);
     background-repeat: no-repeat;
+    background-position: -3px -60px;
     width: 21px;
     height: 21px;
     display: inline-block;
-    background-position: -3px -60px;
     margin: 14px;
 
 }
 
 
-#fixed {
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border: 1px solid black;
-    border-radius: 50px;
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-top: 1px solid #d1d8e4;
 }
 
 nav ul {
+    display: inline-block;
     margin: 0;
-    padding: 0;
+    padding: 16px 0 0 4px;
     list-style: none;
 }
 
@@ -135,7 +179,7 @@ nav li {
 nav li span:first-child {
     height: 16px;
     display: inline-block;
-    margin-left: 14px;
+    margin-left: 10px;
     background-repeat: no-repeat;
     background-image: url(./sp_nav.png);
 }
@@ -169,4 +213,87 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
     width: 25px;
     background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+    width: 35px;
+    background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+    width: 26px;
+    background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+    width: 26px;
+    background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+    width: 26px;
+    background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+    width: 39px;
+    background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+    width: 26px;
+    background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+    width: 26px;
+    background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+    width: 26px;
+    background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+    width: 13px;
+    background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+    width: 26px;
+    background-position: -279px 0;
+}
+
+nav li.more:first-child span:first-child {
+    width: 55px;
+    background-position: 0 -104px;
+}
+.nav-divider {
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 16px;
+    right: 100px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
+}
+
+#rank-title {
+    letter-spacing: -1px;
+    font-size: 14px;
+}
+
+main {
+    background-color: #f2f4f7;
 }
