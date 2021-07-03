@@ -1,4 +1,3 @@
 * linguist-vendored
-*.java linguist-vendored=true
-*.cpp linguist-vendored=false
-*.c linguist-vendored=false
+*.cpp linguist-vendored=true
+*.c linguist-vendored=true
